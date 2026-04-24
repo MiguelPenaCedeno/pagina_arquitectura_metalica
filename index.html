@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arquitectura Metálica Raquel Cedeño SAS - Expertos en carpintería metálica y estructuras metálicas en Colombia. Calidad, innovación y compromiso.">
+    <meta name="keywords" content="estructuras metálicas, carpintería metálica, Colombia, construcción, acero, soldadura, arquitectura metálica">
+    <title>Arquitectura Metálica Raquel Cedeño SAS</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS - Animate on Scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ===================== PRELOADER ===================== -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner">
+                <i class="fas fa-hard-hat"></i>
+            </div>
+            <span>Cargando...</span>
+        </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#inicio" class="logo">
+                <span class="logo-icon"><i class="fas fa-industry"></i></span>
+                <div class="logo-text">
+                    <span class="logo-name">Arquitectura Metálica</span>
+                    <span class="logo-sub">Raquel Cedeño SAS</span>
+                </div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#proceso" class="nav-link">Proceso</a></li>
+                <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="#contacto" class="nav-link btn-nav">Contáctenos</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="container hero-content">
+            <div class="hero-badge" data-aos="fade-down" data-aos-delay="200">
+                <i class="fas fa-shield-alt"></i> Más de 15 años de experiencia
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="400">
+                Construimos el <span class="text-gradient">Futuro</span><br>
+                con <span class="text-gradient">Acero</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">
+                Líderes en diseño, fabricación y montaje de estructuras metálicas en Colombia.
+                Transformamos sus ideas en obras que perduran.
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
+                <a href="#proyectos" class="btn btn-primary">
+                    <i class="fas fa-eye"></i> Ver Proyectos
+                </a>
+                <a href="#contacto" class="btn btn-outline">
+                    <i class="fas fa-paper-plane"></i> Solicitar Cotización
+                </a>
+            </div>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="1000">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="250">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Proyectos Realizados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Años de Experiencia</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Profesionales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Compromiso</span>
+                </div>
+            </div>
+        </div>
+        <a href="#nosotros" class="scroll-indicator">
+            <span>Descubrir más</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- ===================== ABOUT SECTION ===================== -->
+    <section class="section about" id="nosotros">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-info-circle"></i> Conózcanos</span>
+                <h2>Quiénes <span class="text-gradient">Somos</span></h2>
+                <p class="section-description">
+                    Somos una empresa colombiana comprometida con la excelencia en carpintería metálica y estructuras de acero.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="about-img-wrapper">
+                        <div class="about-img-placeholder">
+                            <i class="fas fa-building"></i>
+                            <span>Nuestras Instalaciones</span>
+                        </div>
+                        <div class="about-img-badge">
+                            <span class="badge-number">15+</span>
+                            <span class="badge-text">Años</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h3>Excelencia en cada estructura que construimos</h3>
+                    <p>
+                        En <strong>Arquitectura Metálica Raquel Cedeño SAS</strong>, nos especializamos en el diseño,
+                        fabricación y montaje de estructuras metálicas de alta calidad. Desde nuestra fundación,
+                        hemos sido referentes en el sector de la construcción metálica en Colombia, brindando
+                        soluciones integrales que combinan innovación, seguridad y durabilidad.
+                    </p>
+                    <p>
+                        Nuestro equipo de profesionales altamente calificados trabaja con los más altos estándares
+                        de calidad para garantizar que cada proyecto supere las expectativas de nuestros clientes.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                            <div>
+                                <h4>Certificados</h4>
+                                <p>Cumplimos con normas NSR-10 y estándares internacionales</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon"><i class="fas fa-users"></i></div>
+                            <div>
+                                <h4>Equipo Experto</h4>
+                                <p>Ingenieros, soldadores y técnicos especializados</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon"><i class="fas fa-tools"></i></div>
+                            <div>
+                                <h4>Tecnología</h4>
+                                <p>Maquinaria de última generación para cortes precisos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission & Vision Cards -->
+            <div class="mv-grid">
+                <div class="mv-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Misión</h3>
+                    <p>
+                        Diseñar, fabricar y montar estructuras metálicas de la más alta calidad,
+                        contribuyendo al desarrollo de la infraestructura colombiana con soluciones
+                        innovadoras, seguras y sostenibles que generen valor para nuestros clientes y la sociedad.
+                    </p>
+                </div>
+                <div class="mv-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Visión</h3>
+                    <p>
+                        Ser reconocidos como la empresa líder en arquitectura y estructuras metálicas
+                        en Colombia para el 2030, destacándonos por nuestra excelencia operativa,
+                        innovación tecnológica y compromiso con el desarrollo sostenible del país.
+                    </p>
+                </div>
+                <div class="mv-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mv-icon"><i class="fas fa-gem"></i></div>
+                    <h3>Valores</h3>
+                    <p>
+                        Calidad, responsabilidad, innovación, trabajo en equipo y compromiso
+                        con la seguridad. Estos pilares guían cada decisión y cada soldadura
+                        que realizamos en nuestros proyectos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SERVICES SECTION ===================== -->
+    <section class="section services" id="servicios">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-cogs"></i> Lo que hacemos</span>
+                <h2>Nuestros <span class="text-gradient">Servicios</span></h2>
+                <p class="section-description">
+                    Ofrecemos soluciones integrales en carpintería metálica y estructuras de acero para todo tipo de proyectos.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Estructuras Metálicas</h3>
+                    <p>Diseño y fabricación de estructuras metálicas para edificaciones industriales, comerciales y residenciales con los más altos estándares de calidad.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Naves industriales</li>
+                        <li><i class="fas fa-check"></i> Bodegas y galpones</li>
+                        <li><i class="fas fa-check"></i> Mezzanines</li>
+                        <li><i class="fas fa-check"></i> Puentes metálicos</li>
+                    </ul>
+                    <a href="#contacto" class="service-link">Solicitar información <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-badge">Más solicitado</div>
+                    <div class="service-icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <h3>Carpintería Metálica</h3>
+                    <p>Fabricación e instalación de elementos de carpintería metálica con acabados de alta calidad para proyectos arquitectónicos.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Puertas y ventanas</li>
+                        <li><i class="fas fa-check"></i> Barandas y pasamanos</li>
+                        <li><i class="fas fa-check"></i> Escaleras metálicas</li>
+                        <li><i class="fas fa-check"></i> Rejas y cerramientos</li>
+                    </ul>
+                    <a href="#contacto" class="service-link">Solicitar información <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Cubiertas y Techos</h3>
+                    <p>Instalación de cubiertas metálicas, techos en estructura liviana y sistemas de cubierta para todo tipo de edificaciones.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Cubiertas termoacústicas</li>
+                        <li><i class="fas fa-check"></i> Techos en teja metálica</li>
+                        <li><i class="fas fa-check"></i> Canales y bajantes</li>
+                        <li><i class="fas fa-check"></i> Claraboyas</li>
+                    </ul>
+                    <a href="#contacto" class="service-link">Solicitar información <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Diseño e Ingeniería</h3>
+                    <p>Servicio completo de diseño estructural, cálculos de ingeniería y planos detallados para proyectos de construcción metálica.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Diseño estructural</li>
+                        <li><i class="fas fa-check"></i> Cálculos sísmicos</li>
+                        <li><i class="fas fa-check"></i> Planos de taller</li>
+                        <li><i class="fas fa-check"></i> Modelado 3D</li>
+                    </ul>
+                    <a href="#contacto" class="service-link">Solicitar información <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Soldadura Especializada</h3>
+                    <p>Servicios de soldadura certificada con diferentes procesos para garantizar uniones de máxima resistencia y durabilidad.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Soldadura MIG/MAG</li>
+                        <li><i class="fas fa-check"></i> Soldadura TIG</li>
+                        <li><i class="fas fa-check"></i> Soldadura por arco</li>
+                        <li><i class="fas fa-check"></i> Inspección y ensayos</li>
+                    </ul>
+                    <a href="#contacto" class="service-link">Solicitar información <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Acabados y Recubrimientos</h3>
+                    <p>Aplicación de acabados protectores y decorativos para estructuras metálicas, garantizando durabilidad y estética.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Pintura electrostática</li>
+                        <li><i class="fas fa-check"></i> Galvanizado</li>
+                        <li><i class="fas fa-check"></i> Anticorrosivos</li>
+                        <li><i class="fas fa-check"></i> Pintura epóxica</li>
+                    </ul>
+                    <a href="#contacto" class="service-link">Solicitar información <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROJECTS SECTION ===================== -->
+    <section class="section projects" id="proyectos">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-images"></i> Portafolio</span>
+                <h2>Nuestros <span class="text-gradient">Proyectos</span></h2>
+                <p class="section-description">
+                    Cada proyecto es un testimonio de nuestra dedicación y excelencia en el trabajo con acero.
+                </p>
+            </div>
+
+            <!-- Project Filters -->
+            <div class="project-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="industrial">Industrial</button>
+                <button class="filter-btn" data-filter="comercial">Comercial</button>
+                <button class="filter-btn" data-filter="residencial">Residencial</button>
+                <button class="filter-btn" data-filter="institucional">Institucional</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="industrial" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-img">
+                        <div class="project-placeholder">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <span class="project-category">Industrial</span>
+                                <h3>Nave Industrial 2,500 m²</h3>
+                                <p>Bogotá, Cundinamarca</p>
+                                <a href="#" class="project-link"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="comercial" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-img">
+                        <div class="project-placeholder">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <span class="project-category">Comercial</span>
+                                <h3>Centro Comercial Estructura</h3>
+                                <p>Medellín, Antioquia</p>
+                                <a href="#" class="project-link"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="residencial" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-img">
+                        <div class="project-placeholder">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <span class="project-category">Residencial</span>
+                                <h3>Residencia Premium Steel</h3>
+                                <p>Cali, Valle del Cauca</p>
+                                <a href="#" class="project-link"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="institucional" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-img">
+                        <div class="project-placeholder">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <span class="project-category">Institucional</span>
+                                <h3>Auditorio Universidad</h3>
+                                <p>Barranquilla, Atlántico</p>
+                                <a href="#" class="project-link"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="industrial" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-img">
+                        <div class="project-placeholder">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <span class="project-category">Industrial</span>
+                                <h3>Planta de Producción</h3>
+                                <p>Bucaramanga, Santander</p>
+                                <a href="#" class="project-link"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="comercial" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-img">
+                        <div class="project-placeholder">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <span class="project-category">Comercial</span>
+                                <h3>Edificio de Oficinas</h3>
+                                <p>Cartagena, Bolívar</p>
+                                <a href="#" class="project-link"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROCESS SECTION ===================== -->
+    <section class="section process" id="proceso">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-tasks"></i> Metodología</span>
+                <h2>Nuestro <span class="text-gradient">Proceso</span></h2>
+                <p class="section-description">
+                    Un enfoque estructurado que garantiza resultados excepcionales en cada proyecto.
+                </p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-comments"></i></div>
+                        <h3>Consulta Inicial</h3>
+                        <p>Escuchamos sus necesidades y requerimientos para entender a fondo su proyecto y ofrecer la mejor solución.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-left" data-aos-delay="200">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <h3>Diseño y Planificación</h3>
+                        <p>Nuestro equipo de ingeniería elabora diseños detallados, cálculos estructurales y planos de fabricación.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-cut"></i></div>
+                        <h3>Fabricación</h3>
+                        <p>Producimos cada pieza con precisión milimétrica en nuestro taller utilizando maquinaria de última generación.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-left" data-aos-delay="400">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-search"></i></div>
+                        <h3>Control de Calidad</h3>
+                        <p>Inspección rigurosa de cada componente antes del montaje para asegurar el cumplimiento de estándares.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-right" data-aos-delay="500">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-crane"></i></div>
+                        <h3>Montaje e Instalación</h3>
+                        <p>Equipo especializado realiza el montaje en sitio cumpliendo con todas las normas de seguridad.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-left" data-aos-delay="600">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Entrega y Garantía</h3>
+                        <p>Entregamos el proyecto con certificados de calidad y brindamos garantía en materiales y mano de obra.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CTA BANNER ===================== -->
+    <section class="cta-banner">
+        <div class="cta-overlay"></div>
+        <div class="container cta-content" data-aos="zoom-in">
+            <h2>¿Tiene un proyecto en mente?</h2>
+            <p>Contáctenos hoy y reciba una cotización gratuita. Nuestro equipo está listo para hacer realidad su visión.</p>
+            <div class="cta-buttons">
+                <a href="#contacto" class="btn btn-primary btn-lg">
+                    <i class="fas fa-paper-plane"></i> Solicitar Cotización
+                </a>
+                <a href="tel:+573001234567" class="btn btn-outline btn-lg">
+                    <i class="fas fa-phone"></i> Llamar Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS SECTION ===================== -->
+    <section class="section testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-star"></i> Testimonios</span>
+                <h2>Lo que dicen nuestros <span class="text-gradient">Clientes</span></h2>
+                <p class="section-description">
+                    La satisfacción de nuestros clientes es nuestro mayor respaldo.
+                </p>
+            </div>
+
+            <div class="swiper testimonial-swiper" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Excelente trabajo en la estructura de nuestra bodega. El equipo fue muy profesional,
+                                cumplieron con los tiempos de entrega y la calidad del trabajo superó nuestras expectativas.
+                                Totalmente recomendados."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Carlos Martínez</h4>
+                                    <span>Gerente General, Logística del Norte SAS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Contratamos a Arquitectura Metálica para la estructura de nuestro centro comercial
+                                y quedamos muy satisfechos. Su equipo de ingeniería es excepcional y el acabado final
+                                fue impecable."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>María Rodríguez</h4>
+                                    <span>Directora de Proyectos, Constructora Andina</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Hemos trabajado con Raquel Cedeño SAS en varios proyectos residenciales y siempre
+                                nos entregan un producto de primera. Su atención al detalle y compromiso con la calidad
+                                son incomparables."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Andrés Gómez</h4>
+                                    <span>Arquitecto, AG Diseño & Construcción</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "La escalera metálica que instalaron en nuestra oficina es una obra de arte.
+                                Combinaron funcionalidad con un diseño espectacular. El proceso fue transparente
+                                de principio a fin."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Laura Sánchez</h4>
+                                    <span>CEO, TechSpace Colombia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section class="section contact" id="contacto">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-envelope"></i> Contacto</span>
+                <h2>Hablemos de su <span class="text-gradient">Proyecto</span></h2>
+                <p class="section-description">
+                    Estamos listos para ayudarle. Contáctenos y reciba asesoría personalizada sin compromiso.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Colombia<br>Bogotá D.C.</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+57 300 123 4567<br>+57 601 234 5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@arquitecturametalica.com.co<br>ventas@arquitecturametalica.com.co</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Lunes a Viernes: 7:00 AM - 5:00 PM<br>Sábados: 8:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <h4>Síguenos</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" data-aos="fade-left">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Su nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Nombre de su empresa">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="+57 300 000 0000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="servicio">Servicio de interés</label>
+                        <select id="servicio" name="servicio">
+                            <option value="">Seleccione un servicio</option>
+                            <option value="estructuras">Estructuras Metálicas</option>
+                            <option value="carpinteria">Carpintería Metálica</option>
+                            <option value="cubiertas">Cubiertas y Techos</option>
+                            <option value="diseno">Diseño e Ingeniería</option>
+                            <option value="soldadura">Soldadura Especializada</option>
+                            <option value="acabados">Acabados y Recubrimientos</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntenos sobre su proyecto..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-full">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-col">
+                    <a href="#inicio" class="footer-logo">
+                        <span class="logo-icon"><i class="fas fa-industry"></i></span>
+                        <div class="logo-text">
+                            <span class="logo-name">Arquitectura Metálica</span>
+                            <span class="logo-sub">Raquel Cedeño SAS</span>
+                        </div>
+                    </a>
+                    <p>Líderes en diseño, fabricación y montaje de estructuras metálicas en Colombia. Calidad y compromiso en cada proyecto.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">Estructuras Metálicas</a></li>
+                        <li><a href="#servicios">Carpintería Metálica</a></li>
+                        <li><a href="#servicios">Cubiertas y Techos</a></li>
+                        <li><a href="#servicios">Diseño e Ingeniería</a></li>
+                        <li><a href="#servicios">Soldadura Especializada</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#proceso">Nuestro Proceso</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</li>
+                        <li><i class="fas fa-phone"></i> +57 300 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@arquitecturametalica.com.co</li>
+                        <li><i class="fas fa-clock"></i> Lun-Vie: 7AM - 5PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Arquitectura Metálica Raquel Cedeño SAS. Todos los derechos reservados.</p>
+                <p>NIT: 000.000.000-0 | Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/573001234567" class="whatsapp-float" target="_blank" aria-label="Chat en WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
