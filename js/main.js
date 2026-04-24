@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 position: absolute;
                 width: ${Math.random() * 3 + 1}px;
                 height: ${Math.random() * 3 + 1}px;
-                background: rgba(255, 63, 26, ${Math.random() * 0.2 + 0.05});
+                background: rgba(151, 214, 223, ${Math.random() * 0.2 + 0.05});
                 border-radius: 50%;
                 top: ${Math.random() * 100}%;
                 left: ${Math.random() * 100}%;

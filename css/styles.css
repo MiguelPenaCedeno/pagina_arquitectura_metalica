@@ -15,15 +15,15 @@
     --color-teal-mid:     #b7e2e8;
     --color-teal-dark:    #44797f;
     --color-teal-muted:   #7ba0a6;
-    --color-orange:       #ff3f1a;
-    --color-orange-light: #ff7561;
+    --color-orange:       #97d6df;  /* primary accent — teal-light */
+    --color-orange-light: #b7e2e8;  /* hover variant — teal-mid */
     --color-slate-dark:   #1d2527;
     --color-slate-mid:    #2d3435;
 
     /* Legacy aliases */
-    --primary:            #ff3f1a;
-    --primary-dark:       #cc3215;
-    --primary-light:      #ff7561;
+    --primary:            #97d6df;
+    --primary-dark:       #44797f;
+    --primary-light:      #b7e2e8;
     --secondary:          #1d2527;
     --secondary-light:    #2d3435;
     --accent:             #44797f;
@@ -40,14 +40,14 @@
     --gray-100:           #f4f4f4;
     --white:              #ffffff;
 
-    --gradient-primary:   linear-gradient(135deg, #ff3f1a 0%, #44797f 100%);
+    --gradient-primary:   linear-gradient(135deg, #97d6df 0%, #44797f 100%);
     --gradient-dark:      linear-gradient(135deg, #1d2527 0%, #13121a 100%);
 
     --shadow-sm:          0 2px 8px rgba(19, 18, 26, 0.08);
     --shadow-md:          2px 4px 12px rgba(19, 18, 26, 0.10);
     --shadow-lg:          2px 4px 20px rgba(19, 18, 26, 0.14);
     --shadow-xl:          2px 6px 30px rgba(19, 18, 26, 0.18);
-    --shadow-glow:        0 0 20px rgba(255, 63, 26, 0.22);
+    --shadow-glow:        0 0 20px rgba(151, 214, 223, 0.28);
 
     --radius-sm:          4px;
     --radius-md:          4px;
@@ -64,20 +64,20 @@
 }
 
 /* ---- @font-face ---- */
-/* Just Sans */
-@font-face { font-family: 'Just Sans'; src: url('../fonts/JustSans-ExLight.otf') format('opentype'), url('../fonts/JustSans-ExLight.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Just Sans'; src: url('../fonts/JustSans-Light.otf') format('opentype'), url('../fonts/JustSans-Light.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Just Sans'; src: url('../fonts/JustSans-Regular.otf') format('opentype'), url('../fonts/JustSans-Regular.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Just Sans'; src: url('../fonts/JustSans-Medium.otf') format('opentype'), url('../fonts/JustSans-Medium.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Just Sans'; src: url('../fonts/JustSans-SemiBold.otf') format('opentype'), url('../fonts/JustSans-SemiBold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Just Sans'; src: url('../fonts/JustSans-Bold.otf') format('opentype'), url('../fonts/JustSans-Bold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Just Sans'; src: url('../fonts/JustSans-ExBold.otf') format('opentype'), url('../fonts/JustSans-ExBold.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
-/* Standerd */
-@font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-ExLight.otf') format('opentype'), url('../fonts/Standerd-ExLight.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-Light.otf') format('opentype'), url('../fonts/Standerd-Light.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-Regular.otf') format('opentype'), url('../fonts/Standerd-Regular.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-Medium.otf') format('opentype'), url('../fonts/Standerd-Medium.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-SemiBold.otf') format('opentype'), url('../fonts/Standerd-SemiBold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+/* Just Sans — filenames as delivered (spaces preserved, JUST all-caps) */
+@font-face { font-family: 'Just Sans'; src: url('../fonts/JUST Sans ExLight.otf') format('opentype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Just Sans'; src: url('../fonts/JUST Sans Light.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Just Sans'; src: url('../fonts/JUST Sans Regular.otf') format('opentype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Just Sans'; src: url('../fonts/JUST Sans Medium.otf') format('opentype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Just Sans'; src: url('../fonts/JUST Sans SemiBold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Just Sans'; src: url('../fonts/JUST Sans Bold.otf') format('opentype'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Just Sans'; src: url('../fonts/JUST Sans ExBold.otf') format('opentype'); font-weight: 900; font-style: normal; font-display: swap; }
+/* Standerd — mix of .otf and .ttf as delivered */
+@font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-Thin.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-Light.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-Regular.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-Medium.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-SemiBold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-Bold.otf') format('opentype'), url('../fonts/Standerd-Bold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Standerd'; src: url('../fonts/Standerd-Black.otf') format('opentype'), url('../fonts/Standerd-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
 
@@ -150,7 +150,7 @@ select {
    UTILITIES
    ============================================ */
 .text-gradient {
-    background: linear-gradient(135deg, var(--color-orange) 0%, var(--color-teal-light) 100%);
+    background: linear-gradient(135deg, #b7e2e8 0%, #44797f 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -183,8 +183,8 @@ select {
 }
 
 .loader-logo {
-    width: 260px;
-    max-width: 72vw;
+    width: 320px;
+    max-width: 78vw;
     height: auto;
     animation: logoReveal 0.7s ease both;
 }
@@ -253,7 +253,7 @@ select {
 }
 
 .logo-img {
-    height: 46px;
+    height: 60px;
     width: auto;
     display: block;
 }
@@ -305,7 +305,7 @@ select {
 
 .btn-nav {
     background: var(--color-orange) !important;
-    color: var(--white) !important;
+    color: var(--color-black) !important;
     border-radius: var(--radius-sm) !important;
     padding: 10px 18px !important;
     font-size: 12px !important;
@@ -371,7 +371,7 @@ select {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 15% 60%, rgba(255, 63, 26, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 60%, rgba(151, 214, 223, 0.07) 0%, transparent 55%),
         radial-gradient(ellipse at 85% 15%, rgba(68, 121, 127, 0.06) 0%, transparent 50%);
     pointer-events: none;
 }
@@ -395,8 +395,8 @@ select {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 63, 26, 0.08);
-    border: 1px solid rgba(255, 63, 26, 0.22);
+    background: rgba(151, 214, 223, 0.08);
+    border: 1px solid rgba(151, 214, 223, 0.22);
     padding: 7px 18px;
     border-radius: var(--radius-xl);
     font-size: 11px;
@@ -484,7 +484,7 @@ select {
 
 .btn-primary {
     background: var(--color-orange);
-    color: var(--white);
+    color: var(--color-black);
 }
 
 .btn-primary:hover {
@@ -501,7 +501,7 @@ select {
 
 .btn-outline:hover {
     background: var(--color-orange);
-    color: var(--white);
+    color: var(--color-black);
     transform: translateY(-2px);
 }
 
@@ -542,7 +542,7 @@ select {
 }
 
 .stat-item:hover {
-    background: rgba(255, 63, 26, 0.03);
+    background: rgba(151, 214, 223, 0.03);
 }
 
 .stat-number {
@@ -732,8 +732,8 @@ select {
     width: 44px;
     height: 44px;
     min-width: 44px;
-    background: rgba(255, 63, 26, 0.08);
-    border: 1px solid rgba(255, 63, 26, 0.18);
+    background: rgba(151, 214, 223, 0.08);
+    border: 1px solid rgba(151, 214, 223, 0.18);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -799,7 +799,7 @@ select {
 .mv-icon {
     width: 56px;
     height: 56px;
-    background: rgba(255, 63, 26, 0.08);
+    background: rgba(151, 214, 223, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -894,7 +894,7 @@ select {
 .service-icon {
     width: 52px;
     height: 52px;
-    background: rgba(255, 63, 26, 0.08);
+    background: rgba(151, 214, 223, 0.08);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
@@ -1188,7 +1188,7 @@ select {
 .step-icon {
     width: 40px;
     height: 40px;
-    background: rgba(255, 63, 26, 0.08);
+    background: rgba(151, 214, 223, 0.08);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -1225,7 +1225,7 @@ select {
 .cta-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(255, 63, 26, 0.07) 0%, transparent 68%);
+    background: radial-gradient(ellipse at center, rgba(151, 214, 223, 0.07) 0%, transparent 68%);
     pointer-events: none;
 }
 
@@ -1280,7 +1280,7 @@ select {
 }
 
 .testimonial-card:hover {
-    border-color: rgba(255, 63, 26, 0.2);
+    border-color: rgba(151, 214, 223, 0.2);
 }
 
 .testimonial-stars {
@@ -1311,8 +1311,8 @@ select {
     width: 48px;
     height: 48px;
     min-width: 48px;
-    background: rgba(255, 63, 26, 0.08);
-    border: 1px solid rgba(255, 63, 26, 0.28);
+    background: rgba(151, 214, 223, 0.08);
+    border: 1px solid rgba(151, 214, 223, 0.28);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1373,14 +1373,14 @@ select {
 }
 
 .contact-card:hover {
-    border-color: rgba(255, 63, 26, 0.28);
+    border-color: rgba(151, 214, 223, 0.28);
 }
 
 .contact-icon {
     width: 44px;
     height: 44px;
     min-width: 44px;
-    background: rgba(255, 63, 26, 0.08);
+    background: rgba(151, 214, 223, 0.08);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -1538,7 +1538,7 @@ select {
 }
 
 .footer-logo-img {
-    height: 36px;
+    height: 48px;
     width: auto;
     display: block;
 }
@@ -1782,8 +1782,8 @@ select {
         top: 24px;
         left: 50%;
         transform: translateX(-50%);
-        width: 160px;
-        height: 54px;
+        width: 200px;
+        height: 68px;
         background: url('../img/LOGOTIPO_PNG-04.png') center / contain no-repeat;
         pointer-events: none;
     }
@@ -1914,7 +1914,7 @@ select {
     }
 
     .logo-img {
-        height: 36px;
+        height: 46px;
     }
 
     .stat-item {
@@ -1954,7 +1954,7 @@ select {
    SELECTION & SCROLLBAR
    ============================================ */
 ::selection {
-    background: rgba(255, 63, 26, 0.25);
+    background: rgba(151, 214, 223, 0.25);
     color: var(--white);
 }
 
