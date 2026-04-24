@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(pip install:*)",
+      "Bash(python3 -c \"from PIL import Image; img=Image.open\\(''''C:/Users/migue/Desktop/pagina_arquitectura_metalica/img/LOGOTIPO_PNG-04.png''''\\).convert\\(''''RGBA''''\\); w,h=img.size; bbox=img.split\\(\\)[3].getbbox\\(\\); print\\(w,h,bbox\\)\")"
     ]
   }
 }
