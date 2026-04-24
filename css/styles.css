@@ -5,39 +5,189 @@
 
 /* ---- CSS Variables ---- */
 :root {
-    --primary: #d4740e;
-    --primary-dark: #b8600a;
-    --primary-light: #f0a040;
-    --secondary: #1a1a2e;
-    --secondary-light: #22223a;
-    --accent: #f59e0b;
-    --dark: #0f0f1a;
-    --dark-2: #16162a;
-    --gray-900: #1a1a2e;
-    --gray-800: #2d2d44;
-    --gray-700: #404060;
-    --gray-600: #6b6b8a;
-    --gray-500: #8888a4;
-    --gray-400: #a0a0bb;
-    --gray-300: #c4c4d8;
-    --gray-200: #e2e2ee;
-    --gray-100: #f0f0f6;
-    --white: #ffffff;
-    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    --gradient-dark: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
-    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.16);
-    --shadow-xl: 0 16px 60px rgba(0, 0, 0, 0.2);
-    --shadow-glow: 0 0 30px rgba(212, 116, 14, 0.3);
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
-    --radius-xl: 30px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    --font-primary: 'Montserrat', sans-serif;
-    --font-display: 'Playfair Display', serif;
+    /* Brand Palette — Bauhaus / Arquitectura Metálica Raquel Cedeño SAS */
+    --color-black:        #13121a;
+    --color-dark-gray:    #34343a;
+    --color-mid-gray:     #414147;
+    --color-light:        #ececec;
+    --color-off-white:    #f4f4f4;
+    --color-teal-light:   #97d6df;
+    --color-teal-mid:     #b7e2e8;
+    --color-teal-dark:    #44797f;
+    --color-teal-muted:   #7ba0a6;
+    --color-orange:       #ff3f1a;
+    --color-orange-light: #ff7561;
+    --color-slate-dark:   #1d2527;
+    --color-slate-mid:    #2d3435;
+
+    /* Legacy aliases — mapped to brand palette so existing selectors work */
+    --primary:            #ff3f1a;
+    --primary-dark:       #cc3215;
+    --primary-light:      #ff7561;
+    --secondary:          #1d2527;
+    --secondary-light:    #2d3435;
+    --accent:             #44797f;
+    --dark:               #13121a;
+    --dark-2:             #34343a;
+    --gray-900:           #13121a;
+    --gray-800:           #34343a;
+    --gray-700:           #414147;
+    --gray-600:           #6b6b72;
+    --gray-500:           #8c8c96;
+    --gray-400:           #a8a8b0;
+    --gray-300:           #c8c8d0;
+    --gray-200:           #e2e2e6;
+    --gray-100:           #f4f4f4;
+    --white:              #ffffff;
+
+    /* Gradients */
+    --gradient-primary:   linear-gradient(135deg, #ff3f1a 0%, #44797f 100%);
+    --gradient-dark:      linear-gradient(135deg, #1d2527 0%, #13121a 100%);
+
+    /* Shadows — directional, subtle */
+    --shadow-sm:          0 2px 8px rgba(19, 18, 26, 0.08);
+    --shadow-md:          2px 4px 12px rgba(19, 18, 26, 0.10);
+    --shadow-lg:          2px 4px 20px rgba(19, 18, 26, 0.14);
+    --shadow-xl:          2px 6px 30px rgba(19, 18, 26, 0.18);
+    --shadow-glow:        0 0 20px rgba(255, 63, 26, 0.2);
+
+    /* Border radius — minimal, Bauhaus */
+    --radius-sm:          4px;
+    --radius-md:          4px;
+    --radius-lg:          6px;
+    --radius-xl:          4px;
+
+    --transition:         all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow:    all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Typography
+       NOTE: Font files must be placed in the /fonts/ folder at the project root.
+       Just Sans weights: JustSans-ExLight (300), JustSans-Light (400),
+         JustSans-Regular (500), JustSans-Medium (600),
+         JustSans-SemiBold (700), JustSans-Bold (800), JustSans-ExBold (900)
+       Standerd weights: Standerd-ExLight (300), Standerd-Light (400),
+         Standerd-Regular (500), Standerd-Medium (600),
+         Standerd-SemiBold (700), Standerd-Bold (800), Standerd-Black (900)
+       Supported formats: .otf (opentype) and .ttf (truetype) */
+    --font-primary:       'Just Sans', sans-serif;
+    --font-display:       'Standerd', serif;
+}
+
+/* ---- @font-face Declarations ---- */
+/* Just Sans — primary sans-serif */
+@font-face {
+    font-family: 'Just Sans';
+    src: url('../fonts/JustSans-ExLight.otf') format('opentype'),
+         url('../fonts/JustSans-ExLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Just Sans';
+    src: url('../fonts/JustSans-Light.otf') format('opentype'),
+         url('../fonts/JustSans-Light.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Just Sans';
+    src: url('../fonts/JustSans-Regular.otf') format('opentype'),
+         url('../fonts/JustSans-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Just Sans';
+    src: url('../fonts/JustSans-Medium.otf') format('opentype'),
+         url('../fonts/JustSans-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Just Sans';
+    src: url('../fonts/JustSans-SemiBold.otf') format('opentype'),
+         url('../fonts/JustSans-SemiBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Just Sans';
+    src: url('../fonts/JustSans-Bold.otf') format('opentype'),
+         url('../fonts/JustSans-Bold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Just Sans';
+    src: url('../fonts/JustSans-ExBold.otf') format('opentype'),
+         url('../fonts/JustSans-ExBold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Standerd — display / heading serif */
+@font-face {
+    font-family: 'Standerd';
+    src: url('../fonts/Standerd-ExLight.otf') format('opentype'),
+         url('../fonts/Standerd-ExLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Standerd';
+    src: url('../fonts/Standerd-Light.otf') format('opentype'),
+         url('../fonts/Standerd-Light.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Standerd';
+    src: url('../fonts/Standerd-Regular.otf') format('opentype'),
+         url('../fonts/Standerd-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Standerd';
+    src: url('../fonts/Standerd-Medium.otf') format('opentype'),
+         url('../fonts/Standerd-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Standerd';
+    src: url('../fonts/Standerd-SemiBold.otf') format('opentype'),
+         url('../fonts/Standerd-SemiBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Standerd';
+    src: url('../fonts/Standerd-Bold.otf') format('opentype'),
+         url('../fonts/Standerd-Bold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Standerd';
+    src: url('../fonts/Standerd-Black.otf') format('opentype'),
+         url('../fonts/Standerd-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* ---- Reset & Base ---- */
@@ -99,7 +249,7 @@ select {
 }
 
 .text-gradient {
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, var(--color-orange) 0%, var(--color-teal-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -168,10 +318,10 @@ select {
 }
 
 .navbar.scrolled {
-    background: rgba(15, 15, 26, 0.95);
+    background: rgba(19, 18, 26, 0.95);
     backdrop-filter: blur(20px);
     padding: 12px 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 20px rgba(19, 18, 26, 0.4);
 }
 
 .nav-container {
@@ -237,7 +387,7 @@ select {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--white);
+    color: var(--color-orange);
 }
 
 .nav-link::after {
@@ -247,7 +397,7 @@ select {
     left: 16px;
     right: 16px;
     height: 2px;
-    background: var(--gradient-primary);
+    background: var(--color-orange);
     border-radius: 2px;
     transform: scaleX(0);
     transition: var(--transition);
@@ -311,8 +461,8 @@ select {
     justify-content: center;
     position: relative;
     background:
-        linear-gradient(135deg, rgba(15, 15, 26, 0.92) 0%, rgba(26, 26, 46, 0.88) 100%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(212,116,14,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        linear-gradient(135deg, rgba(19, 18, 26, 0.95) 0%, rgba(29, 37, 39, 0.90) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,63,26,0.04)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
     overflow: hidden;
 }
 
@@ -320,8 +470,8 @@ select {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 20% 50%, rgba(212, 116, 14, 0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+        radial-gradient(ellipse at 20% 50%, rgba(255, 63, 26, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(68, 121, 127, 0.05) 0%, transparent 50%);
 }
 
 .hero-particles {
@@ -341,13 +491,13 @@ select {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(212, 116, 14, 0.1);
-    border: 1px solid rgba(212, 116, 14, 0.2);
+    background: rgba(255, 63, 26, 0.08);
+    border: 1px solid rgba(255, 63, 26, 0.2);
     padding: 8px 20px;
     border-radius: var(--radius-xl);
     font-size: 13px;
     font-weight: 500;
-    color: var(--primary-light);
+    color: var(--color-orange-light);
     margin-bottom: 32px;
 }
 
@@ -402,13 +552,14 @@ select {
 
 .btn-outline {
     background: transparent;
-    color: var(--white);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-orange);
+    border: 2px solid var(--color-orange);
 }
 
 .btn-outline:hover {
-    border-color: var(--primary);
-    color: var(--primary-light);
+    background: var(--color-orange);
+    color: var(--white);
+    border-color: var(--color-orange);
     transform: translateY(-3px);
 }
 
@@ -499,16 +650,16 @@ select {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(212, 116, 14, 0.1);
-    border: 1px solid rgba(212, 116, 14, 0.15);
-    padding: 6px 18px;
-    border-radius: var(--radius-xl);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--primary);
+    background: transparent;
+    border: none;
+    border-left: 3px solid var(--color-orange);
+    padding: 4px 0 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-orange);
     margin-bottom: 16px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
 }
 
 .section-header h2 {
@@ -548,14 +699,14 @@ select {
 .about-img-placeholder {
     width: 100%;
     height: 450px;
-    background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-900) 100%);
+    background: linear-gradient(135deg, var(--color-dark-gray) 0%, var(--color-black) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 16px;
     border-radius: var(--radius-lg);
-    border: 1px solid var(--gray-700);
+    border: 1px solid var(--color-mid-gray);
 }
 
 .about-img-placeholder i {
@@ -625,13 +776,13 @@ select {
     width: 48px;
     height: 48px;
     min-width: 48px;
-    background: rgba(212, 116, 14, 0.1);
-    border: 1px solid rgba(212, 116, 14, 0.2);
+    background: rgba(255, 63, 26, 0.08);
+    border: 1px solid rgba(255, 63, 26, 0.2);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary);
+    color: var(--color-orange);
     font-size: 20px;
 }
 
@@ -664,7 +815,7 @@ select {
 }
 
 .mv-card:hover {
-    border-color: rgba(212, 116, 14, 0.3);
+    border-color: rgba(255, 63, 26, 0.3);
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
 }
@@ -672,7 +823,7 @@ select {
 .mv-icon {
     width: 64px;
     height: 64px;
-    background: rgba(212, 116, 14, 0.1);
+    background: rgba(255, 63, 26, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -728,7 +879,7 @@ select {
 }
 
 .service-card:hover {
-    border-color: rgba(212, 116, 14, 0.3);
+    border-color: rgba(255, 63, 26, 0.3);
     transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
 }
@@ -738,8 +889,9 @@ select {
 }
 
 .service-card.featured {
-    border-color: rgba(212, 116, 14, 0.3);
-    background: linear-gradient(to bottom, rgba(212, 116, 14, 0.05) 0%, var(--secondary-light) 100%);
+    border-color: rgba(255, 63, 26, 0.3);
+    background: var(--color-black);
+    color: var(--color-light);
 }
 
 .service-card.featured::before {
@@ -763,7 +915,7 @@ select {
 .service-icon {
     width: 64px;
     height: 64px;
-    background: rgba(212, 116, 14, 0.1);
+    background: rgba(255, 63, 26, 0.08);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
@@ -880,7 +1032,7 @@ select {
 .project-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-900) 100%);
+    background: linear-gradient(135deg, var(--color-dark-gray) 0%, var(--color-black) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -896,7 +1048,7 @@ select {
 .project-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(15, 15, 26, 0.95) 0%, rgba(15, 15, 26, 0.3) 100%);
+    background: linear-gradient(to top, rgba(19, 18, 26, 0.95) 0%, rgba(19, 18, 26, 0.3) 100%);
     display: flex;
     align-items: flex-end;
     padding: 32px;
@@ -918,8 +1070,8 @@ select {
 
 .project-category {
     display: inline-block;
-    background: rgba(212, 116, 14, 0.2);
-    color: var(--primary-light);
+    background: rgba(255, 63, 26, 0.2);
+    color: var(--color-orange-light);
     font-size: 12px;
     font-weight: 600;
     padding: 4px 12px;
@@ -1022,7 +1174,7 @@ select {
 }
 
 .step-content:hover {
-    border-color: rgba(212, 116, 14, 0.3);
+    border-color: rgba(255, 63, 26, 0.3);
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
 }
@@ -1030,7 +1182,7 @@ select {
 .step-icon {
     width: 44px;
     height: 44px;
-    background: rgba(212, 116, 14, 0.1);
+    background: rgba(255, 63, 26, 0.08);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -1064,7 +1216,7 @@ select {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at center, rgba(212, 116, 14, 0.1) 0%, transparent 70%);
+        radial-gradient(ellipse at center, rgba(255, 63, 26, 0.08) 0%, transparent 70%);
 }
 
 .cta-content {
@@ -1112,7 +1264,7 @@ select {
 }
 
 .testimonial-card:hover {
-    border-color: rgba(212, 116, 14, 0.2);
+    border-color: rgba(255, 63, 26, 0.2);
 }
 
 .testimonial-stars {
@@ -1143,8 +1295,8 @@ select {
     width: 52px;
     height: 52px;
     min-width: 52px;
-    background: rgba(212, 116, 14, 0.1);
-    border: 2px solid rgba(212, 116, 14, 0.3);
+    background: rgba(255, 63, 26, 0.08);
+    border: 2px solid rgba(255, 63, 26, 0.3);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1201,14 +1353,14 @@ select {
 }
 
 .contact-card:hover {
-    border-color: rgba(212, 116, 14, 0.3);
+    border-color: rgba(255, 63, 26, 0.3);
 }
 
 .contact-icon {
     width: 48px;
     height: 48px;
     min-width: 48px;
-    background: rgba(212, 116, 14, 0.1);
+    background: rgba(255, 63, 26, 0.08);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -1259,8 +1411,8 @@ select {
 }
 
 .social-links a:hover {
-    background: var(--gradient-primary);
-    border-color: transparent;
+    background: var(--color-orange);
+    border-color: var(--color-orange);
     color: var(--white);
     transform: translateY(-3px);
 }
@@ -1310,8 +1462,8 @@ select {
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(212, 116, 14, 0.1);
+    border-color: var(--color-teal-dark);
+    box-shadow: 0 0 0 3px rgba(68, 121, 127, 0.12);
 }
 
 .form-group input::placeholder,
@@ -1543,7 +1695,7 @@ select {
         width: 80%;
         max-width: 360px;
         height: 100vh;
-        background: var(--secondary);
+        background: var(--color-slate-dark);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -1658,7 +1810,7 @@ select {
 
 /* ---- Selection Color ---- */
 ::selection {
-    background: rgba(212, 116, 14, 0.3);
+    background: rgba(255, 63, 26, 0.25);
     color: var(--white);
 }
 
