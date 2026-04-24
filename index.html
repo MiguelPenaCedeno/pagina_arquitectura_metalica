@@ -11,8 +11,13 @@
     <meta name="format-detection" content="telephone=no">
     <title>Arquitectura Metálica</title>
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
     <!-- Fonts: Just Sans + Standerd loaded via @font-face in css/styles.css -->
-    <!-- Place font .woff2 files in the /fonts/ folder at the project root -->
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -27,6 +32,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+    <!-- Skip to content (accessibility) -->
+    <a href="#inicio" class="skip-link">Ir al contenido principal</a>
 
     <!-- ===================== PRELOADER ===================== -->
     <div id="preloader">
@@ -644,7 +652,7 @@
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
                             <h4>Ubicación</h4>
-                            <p>Colombia<br>Bogotá D.C.</p>
+                            <p>Cl. 66 #81b-20<br>Bogotá D.C., Colombia</p>
                         </div>
                     </div>
                     <div class="contact-card">
@@ -724,6 +732,19 @@
                     </button>
                 </form>
             </div>
+
+            <div class="contact-map" data-aos="fade-up">
+                <iframe
+                    src="https://maps.google.com/maps?q=Calle+66+%2381b-20,+Bogot%C3%A1,+Colombia&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="320"
+                    style="border:0; border-radius: var(--radius-lg);"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación de Arquitectura Metálica en Bogotá">
+                </iframe>
+            </div>
         </div>
     </section>
 
@@ -766,7 +787,7 @@
                 <div class="footer-col">
                     <h4>Contacto</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Cl. 66 #81b-20, Bogotá</li>
                         <li><i class="fas fa-phone"></i> +57 300 123 4567</li>
                         <li><i class="fas fa-envelope"></i> info@arquitecturametalica.com.co</li>
                         <li><i class="fas fa-clock"></i> Lun-Vie: 7AM - 5PM</li>
@@ -777,7 +798,7 @@
         <div class="footer-bottom">
             <div class="container footer-bottom-content">
                 <p>&copy; 2026 Arquitectura Metálica. Todos los derechos reservados.</p>
-                <p>NIT: 000.000.000-0 | Colombia</p>
+                <p><a href="#" id="openPrivacy" class="footer-legal-link">Política de Privacidad</a> · <a href="#" id="openTerms" class="footer-legal-link">Tratamiento de Datos</a></p>
             </div>
         </div>
     </footer>
@@ -791,6 +812,50 @@
     <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- ===================== PRIVACY POLICY MODAL ===================== -->
+    <div class="modal-overlay" id="privacyModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closePrivacy" aria-label="Cerrar">&times;</button>
+            <h2>Política de Privacidad y Tratamiento de Datos Personales</h2>
+            <div class="modal-body">
+                <p><strong>Arquitectura Metálica</strong>, con domicilio en Cl. 66 #81b-20, Bogotá D.C., Colombia, en cumplimiento de la Ley 1581 de 2012 y el Decreto 1377 de 2013, informa:</p>
+
+                <h3>1. Responsable del Tratamiento</h3>
+                <p>Arquitectura Metálica es responsable del tratamiento de los datos personales recolectados a través de este sitio web.</p>
+
+                <h3>2. Finalidad del Tratamiento</h3>
+                <p>Los datos personales recopilados serán utilizados para:</p>
+                <ul>
+                    <li>Responder solicitudes de cotización y consultas.</li>
+                    <li>Enviar información sobre nuestros servicios.</li>
+                    <li>Gestionar la relación comercial con clientes y proveedores.</li>
+                    <li>Cumplir obligaciones legales y contractuales.</li>
+                </ul>
+
+                <h3>3. Datos Recopilados</h3>
+                <p>A través del formulario de contacto recopilamos: nombre, correo electrónico, teléfono, empresa y mensaje. No recopilamos datos sensibles.</p>
+
+                <h3>4. Derechos del Titular</h3>
+                <p>Usted tiene derecho a conocer, actualizar, rectificar y suprimir sus datos personales, así como a revocar la autorización otorgada. Para ejercer estos derechos, puede contactarnos a través de los canales indicados en la sección de contacto.</p>
+
+                <h3>5. Seguridad</h3>
+                <p>Implementamos medidas técnicas y organizativas para proteger sus datos personales contra acceso no autorizado, pérdida o alteración.</p>
+
+                <h3>6. Cookies</h3>
+                <p>Este sitio web utiliza cookies técnicas necesarias para su funcionamiento. No utilizamos cookies de seguimiento ni publicitarias.</p>
+
+                <h3>7. Vigencia</h3>
+                <p>Esta política entra en vigor a partir de su publicación y permanecerá vigente mientras Arquitectura Metálica trate datos personales.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== COOKIE BANNER ===================== -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>Utilizamos cookies técnicas para el funcionamiento del sitio. Al continuar navegando, acepta nuestra <a href="#" id="cookiePrivacyLink">Política de Privacidad</a>.</p>
+        <button class="btn btn-primary btn-sm" id="acceptCookies">Aceptar</button>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
