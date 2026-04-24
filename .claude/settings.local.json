@@ -4,7 +4,15 @@
       "Bash(cd:*)",
       "Bash(python3 -c \":*)",
       "Bash(pip install:*)",
-      "Bash(python3 -c \"from PIL import Image; img=Image.open\\(''''C:/Users/migue/Desktop/pagina_arquitectura_metalica/img/LOGOTIPO_PNG-04.png''''\\).convert\\(''''RGBA''''\\); w,h=img.size; bbox=img.split\\(\\)[3].getbbox\\(\\); print\\(w,h,bbox\\)\")"
+      "Bash(python3 -c \"from PIL import Image; img=Image.open\\(''''C:/Users/migue/Desktop/pagina_arquitectura_metalica/img/LOGOTIPO_PNG-04.png''''\\).convert\\(''''RGBA''''\\); w,h=img.size; bbox=img.split\\(\\)[3].getbbox\\(\\); print\\(w,h,bbox\\)\")",
+      "Bash(where magick:*)",
+      "Bash(where convert:*)",
+      "Bash(where ffmpeg:*)",
+      "Bash(powershell -Command \"Add-Type -AssemblyName System.Drawing; echo ''dotnet-ok''\")",
+      "Bash(python:*)",
+      "Bash(python3 -c \"from PIL import Image; print\\(''ok''\\)\")",
+      "Bash(pip3.12 install:*)",
+      "Bash(\"C:\\\\Users\\\\migue\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\\\python.exe\" -c \"from PIL import Image; print\\(''ok''\\)\")"
     ]
   }
 }

@@ -244,17 +244,8 @@ select {
     justify-content: space-between;
 }
 
-/*
- * Logo crop math (canvas 2846×1600, content ~50% W × 20.5% H):
- * To display content at ~46px tall → scale the image to 420px wide (0.1476×).
- * Offset left ~62px (16% of 420) and top ~58px (27% of 224 image-height) to strip transparent padding.
- * Wrapper clips to the content area: 210px wide × 52px tall.
- */
 .logo {
     display: block;
-    overflow: hidden;
-    width: 210px;
-    height: 52px;
     z-index: 1001;
     flex-shrink: 0;
     -webkit-tap-highlight-color: transparent;
@@ -262,10 +253,8 @@ select {
 
 .logo-img {
     display: block;
-    width: 420px;
-    height: auto;
-    transform: translate(-62px, -58px);
-    will-change: transform;
+    height: 44px;
+    width: auto;
 }
 
 .nav-menu {
@@ -1543,17 +1532,13 @@ select {
 
 .footer-logo {
     display: block;
-    overflow: hidden;
-    width: 190px;
-    height: 47px;
     margin-bottom: 24px;
 }
 
 .footer-logo-img {
     display: block;
-    width: 380px;
-    height: auto;
-    transform: translate(-56px, -53px);
+    height: 40px;
+    width: auto;
 }
 
 .footer-col > p {
@@ -1788,16 +1773,16 @@ select {
         visibility: visible;
     }
 
-    /* Logo ghost in mobile menu — tall container so contain-scaled image shows content */
     .nav-menu::before {
         content: '';
         position: absolute;
-        top: 16px;
+        top: 32px;
         left: 50%;
         transform: translateX(-50%);
-        width: 340px;
-        height: 192px;
+        width: 280px;
+        height: 48px;
         background: url('../img/LOGOTIPO_PNG-04.png') center / contain no-repeat;
+        opacity: 0.08;
         pointer-events: none;
     }
 
@@ -1926,15 +1911,8 @@ select {
         width: 100%;
     }
 
-    /* Slightly smaller crop on small screens */
-    .logo {
-        width: 175px;
-        height: 43px;
-    }
-
     .logo-img {
-        width: 350px;
-        transform: translate(-52px, -49px);
+        height: 36px;
     }
 
     .stat-item {
@@ -1969,15 +1947,8 @@ select {
         padding: 52px 0 36px;
     }
 
-    /* Smallest crop */
-    .logo {
-        width: 148px;
-        height: 37px;
-    }
-
     .logo-img {
-        width: 296px;
-        transform: translate(-44px, -41px);
+        height: 30px;
     }
 }
 
