@@ -2027,6 +2027,18 @@ button:focus-visible,
     border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.map-heading {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.map-heading i {
+    color: var(--color-teal-light);
+    margin-right: 8px;
+}
+
 .contact-map iframe {
     display: block;
     width: 100%;
