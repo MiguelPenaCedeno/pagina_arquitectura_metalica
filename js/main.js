@@ -1,7 +1,22 @@
 /* ============================================
-   ARQUITECTURA METÁLICA RAQUEL CEDEÑO SAS
-   Main JavaScript
+   ARQUITECTURA METALICA
+   Main JavaScript — GSAP + Vanta + Lenis
    ============================================ */
+
+// ---- Lenis Smooth Scroll ----
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+});
+
+// ---- GSAP + ScrollTrigger Setup ----
+gsap.registerPlugin(ScrollTrigger);
+
+// Connect Lenis to GSAP
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+gsap.ticker.lagSmoothing(0);
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -18,12 +33,150 @@ document.addEventListener('DOMContentLoaded', () => {
         preloader.classList.add('hidden');
     }, 3000);
 
-    // ---- AOS Init ----
-    AOS.init({
-        duration: 800,
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 80,
+    // ---- Vanta FOG — Animated Hero Background ----
+    if (typeof VANTA !== 'undefined') {
+        VANTA.FOG({
+            el: '.hero',
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            highlightColor: 0xff3f1a,
+            midtoneColor: 0x1d2527,
+            lowlightColor: 0x44797f,
+            baseColor: 0x13121a,
+            blurFactor: 0.62,
+            zoom: 1.2,
+            speed: 1.5
+        });
+    }
+
+    // ---- GSAP Hero Animations ----
+    gsap.from('.hero-badge', {
+        opacity: 0, y: -30, duration: 0.8, delay: 0.3, ease: 'power3.out'
+    });
+    gsap.from('.hero h1', {
+        opacity: 0, y: 50, duration: 1, delay: 0.5, ease: 'power3.out'
+    });
+    gsap.from('.hero-subtitle', {
+        opacity: 0, y: 30, duration: 0.9, delay: 0.75, ease: 'power3.out'
+    });
+    gsap.from('.hero-buttons', {
+        opacity: 0, y: 30, duration: 0.9, delay: 0.95, ease: 'power3.out'
+    });
+    gsap.from('.stat-item', {
+        opacity: 0, y: 40, duration: 0.7, delay: 1.1,
+        stagger: 0.15, ease: 'power3.out'
+    });
+
+    // ---- Hero Parallax on Scroll ----
+    gsap.to('.hero-content', {
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+        },
+        y: 120,
+        opacity: 0.3,
+        ease: 'none'
+    });
+
+    // ---- Section Headers ----
+    gsap.utils.toArray('.section-header').forEach(header => {
+        gsap.from(header, {
+            scrollTrigger: { trigger: header, start: 'top 85%' },
+            opacity: 0, y: 50, duration: 0.9, ease: 'power3.out'
+        });
+    });
+
+    // ---- About Section ----
+    gsap.from('.about-image', {
+        scrollTrigger: { trigger: '.about-image', start: 'top 80%' },
+        opacity: 0, x: -60, duration: 1, ease: 'power3.out'
+    });
+    gsap.from('.about-content', {
+        scrollTrigger: { trigger: '.about-content', start: 'top 80%' },
+        opacity: 0, x: 60, duration: 1, ease: 'power3.out'
+    });
+    gsap.utils.toArray('.about-feature').forEach((el, i) => {
+        gsap.from(el, {
+            scrollTrigger: { trigger: el, start: 'top 85%' },
+            opacity: 0, y: 30, duration: 0.6,
+            delay: i * 0.1, ease: 'power2.out'
+        });
+    });
+
+    // ---- Mission / Vision / Values Cards ----
+    gsap.utils.toArray('.mv-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: { trigger: card, start: 'top 85%' },
+            opacity: 0, y: 50, duration: 0.7,
+            delay: i * 0.12, ease: 'power3.out'
+        });
+    });
+
+    // ---- Service Cards ----
+    gsap.utils.toArray('.service-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: { trigger: card, start: 'top 88%' },
+            opacity: 0, y: 60, scale: 0.97, duration: 0.7,
+            delay: i * 0.08, ease: 'power3.out'
+        });
+    });
+
+    // ---- Project Cards ----
+    gsap.utils.toArray('.project-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: { trigger: card, start: 'top 88%' },
+            opacity: 0, y: 50, duration: 0.65,
+            delay: i * 0.1, ease: 'power2.out'
+        });
+    });
+
+    // ---- Process Steps ----
+    gsap.utils.toArray('.process-step').forEach((step, i) => {
+        const direction = i % 2 === 0 ? -70 : 70;
+        gsap.from(step, {
+            scrollTrigger: { trigger: step, start: 'top 85%' },
+            opacity: 0, x: direction, duration: 0.9, ease: 'power3.out'
+        });
+    });
+
+    // ---- CTA Banner ----
+    gsap.from('.cta-content', {
+        scrollTrigger: { trigger: '.cta-banner', start: 'top 75%' },
+        opacity: 0, scale: 0.95, duration: 1, ease: 'power3.out'
+    });
+
+    // ---- Testimonials ----
+    gsap.from('.testimonial-swiper', {
+        scrollTrigger: { trigger: '.testimonial-swiper', start: 'top 80%' },
+        opacity: 0, y: 40, duration: 0.9, ease: 'power3.out'
+    });
+
+    // ---- Contact Section ----
+    gsap.from('.contact-info', {
+        scrollTrigger: { trigger: '.contact-info', start: 'top 80%' },
+        opacity: 0, x: -50, duration: 1, ease: 'power3.out'
+    });
+    gsap.from('.contact-form', {
+        scrollTrigger: { trigger: '.contact-form', start: 'top 80%' },
+        opacity: 0, x: 50, duration: 1, ease: 'power3.out'
+    });
+
+    // ---- Contact Map ----
+    gsap.from('.contact-map', {
+        scrollTrigger: { trigger: '.contact-map', start: 'top 85%' },
+        opacity: 0, y: 40, duration: 0.9, ease: 'power3.out'
+    });
+
+    // ---- Footer ----
+    gsap.utils.toArray('.footer-col').forEach((col, i) => {
+        gsap.from(col, {
+            scrollTrigger: { trigger: col, start: 'top 90%' },
+            opacity: 0, y: 30, duration: 0.6,
+            delay: i * 0.1, ease: 'power2.out'
+        });
     });
 
     // ---- Navbar Scroll ----
@@ -33,21 +186,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function onScroll() {
         const scrollY = window.scrollY;
 
-        // Navbar background
         if (scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
 
-        // Back to top button
         if (scrollY > 400) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
         }
 
-        // Active nav link based on section
         updateActiveNavLink();
     }
 
@@ -85,7 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('active');
     });
 
-    // Close menu on link click
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -93,7 +242,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close menu on outside click
     document.addEventListener('click', (e) => {
         if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
             hamburger.classList.remove('active');
@@ -101,12 +249,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ---- Back to Top ----
+    // ---- Back to Top (use Lenis for smooth scroll) ----
     backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        lenis.scrollTo(0);
     });
 
-    // ---- Smooth Scroll for anchor links ----
+    // ---- Smooth Scroll for anchor links (use Lenis) ----
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
@@ -115,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(targetId);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
+                lenis.scrollTo(target);
             }
         });
     });
@@ -167,7 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active button
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
@@ -176,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
             projectCards.forEach(card => {
                 if (filter === 'all' || card.dataset.category === filter) {
                     card.classList.remove('hidden');
-                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                    gsap.from(card, { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' });
                 } else {
                     card.classList.add('hidden');
                 }
@@ -217,13 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const formData = new FormData(contactForm);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-
-            // Simulate form submission
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
@@ -275,10 +415,6 @@ document.addEventListener('DOMContentLoaded', () => {
             10% { opacity: 1; }
             90% { opacity: 1; }
             100% { transform: translate(${Math.random() > 0.5 ? '' : '-'}${Math.random() * 200 + 100}px, -${Math.random() * 400 + 200}px) scale(0); opacity: 0; }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
     `;
     document.head.appendChild(style);
