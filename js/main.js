@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
-            color: 0xff3f1a,
+            color: 0x97d6df,
             backgroundColor: 0x13121a,
             points: 10.0,
             maxDistance: 22.0,
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Observe hero stats for counter animation
-    const statsSection = document.querySelector('.hero-stats');
+    const statsSection = document.querySelector('.hero-stats-bar');
     if (statsSection) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
