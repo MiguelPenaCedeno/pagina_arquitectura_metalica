@@ -613,7 +613,7 @@ select {
 }
 
 .section-tag i {
-    color: var(--color-orange);
+    color: #97d6df;
 }
 
 .section-header h2 {
@@ -685,7 +685,7 @@ select {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    background: linear-gradient(135deg, #ff3f1a, #44797f);
+    background: linear-gradient(135deg, #ff3f1a, #ff7561);
     padding: 20px 24px;
     border-radius: var(--radius-md);
     text-align: center;
@@ -745,17 +745,23 @@ select {
 }
 
 .feature-icon {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    background: linear-gradient(135deg, rgba(255, 63, 26, 0.1), rgba(68, 121, 127, 0.1));
-    border: 1px solid rgba(255, 63, 26, 0.18);
-    border-radius: var(--radius-sm);
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: #1d2527;
+    border: 1px solid rgba(68, 121, 127, 0.4);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-orange);
-    font-size: 17px;
+    color: #44797f;
+    font-size: 1.1rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.about-feature:hover .feature-icon {
+    background: rgba(68, 121, 127, 0.12);
+    color: #97d6df;
 }
 
 .about-feature h4 {
@@ -813,16 +819,35 @@ select {
 }
 
 .mv-icon {
-    width: 56px;
-    height: 56px;
-    background: linear-gradient(135deg, #ff3f1a, #44797f);
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.4rem;
     margin: 0 auto 24px;
-    font-size: 22px;
-    color: var(--white);
+}
+
+/* Misión — orange (primary brand value) */
+.mv-card:nth-child(1) .mv-icon {
+    background: rgba(255, 63, 26, 0.12);
+    color: #ff3f1a;
+    border: 1px solid rgba(255, 63, 26, 0.3);
+}
+
+/* Visión — teal dark */
+.mv-card:nth-child(2) .mv-icon {
+    background: rgba(68, 121, 127, 0.12);
+    color: #44797f;
+    border: 1px solid rgba(68, 121, 127, 0.3);
+}
+
+/* Valores — teal light */
+.mv-card:nth-child(3) .mv-icon {
+    background: rgba(151, 214, 223, 0.1);
+    color: #97d6df;
+    border: 1px solid rgba(151, 214, 223, 0.25);
 }
 
 .mv-card h3 {
@@ -908,23 +933,44 @@ select {
 }
 
 .service-icon {
-    width: 52px;
-    height: 52px;
-    background: linear-gradient(135deg, #ff3f1a, #44797f);
-    border-radius: var(--radius-md);
+    width: 64px;
+    height: 64px;
+    background: #1d2527;
+    border: 1px solid #44797f;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    color: var(--white);
-    margin-bottom: 22px;
-    transition: var(--transition);
+    margin-bottom: 1.25rem;
+    transition: background 0.3s, border-color 0.3s;
 }
 
-.service-card:hover .service-icon,
+.service-icon i {
+    color: #44797f;
+    font-size: 1.6rem;
+    transition: color 0.3s;
+}
+
+.service-card:hover .service-icon {
+    background: rgba(68, 121, 127, 0.12);
+    border-color: #97d6df;
+}
+
+.service-card:hover .service-icon i {
+    color: #97d6df;
+}
+
 .service-card.featured .service-icon {
-    background: linear-gradient(135deg, #ff7561, #97d6df);
-    color: var(--white);
+    background: rgba(255, 63, 26, 0.12);
+    border-color: #ff3f1a;
+}
+
+.service-card.featured .service-icon i {
+    color: #ff3f1a;
+}
+
+.service-card.featured:hover .service-icon {
+    background: rgba(255, 63, 26, 0.2);
 }
 
 .service-card h3 {
@@ -962,7 +1008,7 @@ select {
 
 .service-list li i {
     font-size: 9px;
-    color: var(--color-orange);
+    color: #44797f;
     flex-shrink: 0;
 }
 
@@ -970,17 +1016,18 @@ select {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--color-orange);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #7ba0a6;
+    letter-spacing: 0.05em;
+    text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
-    transition: var(--transition);
+    transition: color 0.25s, gap 0.25s;
 }
 
 .service-link:hover {
-    gap: 10px;
     color: #ff3f1a;
+    gap: 10px;
 }
 
 /* ============================================
@@ -1204,14 +1251,26 @@ select {
 .step-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, rgba(255, 63, 26, 0.1), rgba(68, 121, 127, 0.1));
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-teal-light);
     font-size: 16px;
     margin-bottom: 16px;
+}
+
+/* Odd steps — teal */
+.process-step:nth-child(odd) .step-icon {
+    background: rgba(68, 121, 127, 0.12);
+    color: #44797f;
+    border: 1px solid rgba(68, 121, 127, 0.3);
+}
+
+/* Even steps — orange */
+.process-step:nth-child(even) .step-icon {
+    background: rgba(255, 63, 26, 0.1);
+    color: #ff3f1a;
+    border: 1px solid rgba(255, 63, 26, 0.25);
 }
 
 .step-content h3 {
@@ -1403,16 +1462,17 @@ select {
 }
 
 .contact-icon {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    background: linear-gradient(135deg, #ff3f1a, #44797f);
-    border-radius: var(--radius-sm);
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: #1d2527;
+    border: 1px solid rgba(68, 121, 127, 0.35);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
-    font-size: 17px;
+    color: #44797f;
+    font-size: 1.1rem;
 }
 
 .contact-card h4 {
