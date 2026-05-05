@@ -18,6 +18,8 @@ lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time) => { lenis.raf(time * 1000); });
 gsap.ticker.lagSmoothing(0);
 
+let vantaEffect = null;
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // ---- Preloader ----
@@ -33,20 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
         preloader.classList.add('hidden');
     }, 3000);
 
-    // ---- Vanta FOG — Animated Hero Background ----
+    // ---- Vanta NET — Animated Hero Background ----
     if (typeof VANTA !== 'undefined') {
-        VANTA.FOG({
+        vantaEffect = VANTA.NET({
             el: '.hero',
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
-            highlightColor: 0xff3f1a,
-            midtoneColor: 0x1d2527,
-            lowlightColor: 0x44797f,
-            baseColor: 0x13121a,
-            blurFactor: 0.62,
-            zoom: 1.2,
-            speed: 1.5
+            color: 0xff3f1a,
+            backgroundColor: 0x13121a,
+            points: 10.0,
+            maxDistance: 22.0,
+            spacing: 18.0,
+            showDots: true
         });
     }
 
@@ -485,4 +486,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+});
+
+window.addEventListener('beforeunload', () => {
+    if (vantaEffect) vantaEffect.destroy();
 });

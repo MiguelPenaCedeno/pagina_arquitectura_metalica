@@ -383,17 +383,13 @@ select {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(19, 18, 26, 0.35);
+    background: rgba(19, 18, 26, 0.55);
     pointer-events: none;
     z-index: 1;
 }
 
 .hero-particles {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 2;
+    display: none;
 }
 
 .hero-content {
