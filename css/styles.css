@@ -452,7 +452,10 @@ select {
     position: relative;
     z-index: 2;
     text-align: left;
-    padding: 148px 0 160px;
+    /* Vertical only — horizontal padding comes from .container so the text
+       never reaches the viewport edge on narrow screens. */
+    padding-top: 148px;
+    padding-bottom: 160px;
     width: 100%;
 }
 
@@ -2164,8 +2167,48 @@ select {
         gap: 8px;
     }
 
+    /* === Hero stacks vertically on mobile ===
+       .hero is display:flex; without flex-direction:column its children would
+       lay out side-by-side (which is what was floating the stats bar to the right). */
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        min-height: auto;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding-top: 112px;
+        padding-bottom: 32px;
+    }
+
+    .hero-badge {
+        align-self: center;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
     .hero-stats-bar {
+        position: relative;
+        width: 100%;
         flex-wrap: wrap;
+        margin-top: 8px;
     }
 
     .hero-stats-bar .stat-item {
@@ -2239,21 +2282,17 @@ select {
 
 /* ============================================
    RESPONSIVE — 480px (Small Mobile, iPhone SE-class)
+   Layout/stacking rules live in the 768px block; this block only tightens
+   sizes and spacing for very narrow screens.
    ============================================ */
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
     }
 
-    /* Let the hero grow with content instead of being locked to 100vh —
-       on iPhone SE the stats bar overlapping absolute-positioned hero-content
-       was pushing the buttons below the fold. */
-    .hero {
-        min-height: auto;
-    }
-
     .hero-content {
-        padding: 96px 0 32px;
+        padding-top: 96px;
+        padding-bottom: 24px;
     }
 
     .hero h1 {
@@ -2272,9 +2311,7 @@ select {
         margin-bottom: 24px;
     }
 
-    /* Stack hero CTAs vertically with breathing room.
-       Each button takes the full column; gap keeps tap targets clearly separated. */
-    .hero-buttons,
+    /* Stack the CTA-banner buttons too (mirrors hero behavior) */
     .cta-buttons {
         flex-direction: column;
         align-items: stretch;
@@ -2282,16 +2319,8 @@ select {
         width: 100%;
     }
 
-    .hero-buttons .btn,
     .cta-buttons .btn {
         width: 100%;
-    }
-
-    /* Stats bar is no longer absolute on small screens —
-       it sits naturally below the buttons. */
-    .hero-stats-bar {
-        position: relative;
-        margin-top: 16px;
     }
 
     .hero-stats-bar .stat-item {
