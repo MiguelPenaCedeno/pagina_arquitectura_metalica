@@ -6,7 +6,13 @@
 /* ---- CSS Variables ---- */
 :root {
     /* Brand Palette */
-    --color-black:        #13121a;
+    --color-black:        #1d1411;  /* warmed substrate — oxblood-espresso, harmonizes with orange */
+    --color-black-rgb:    29, 20, 17;
+    --color-bg-deep:      #170e0c;  /* alt section background — slightly darker */
+    --color-bg-mid:       #1a110d;  /* alt section background — projects */
+    --color-bg-darkest:   #120c09;  /* footer */
+    --color-bg-strip:     #150e0a;  /* footer-bottom strip */
+    --color-bg-raised:    #241914;  /* elevated cards (testimonial, service hover) */
     --color-dark-gray:    #34343a;
     --color-mid-gray:     #414147;
     --color-light:        #ececec;
@@ -15,9 +21,9 @@
     --color-teal-mid:     #b7e2e8;
     --color-teal-dark:    #44797f;
     --color-teal-muted:   #7ba0a6;
-    --color-orange:       #b56b43;  /* primary accent — Corten rust (weathering steel) */
-    --color-orange-light: #cc8a65;  /* hover variant — light patina */
-    --color-orange-rgb:   181, 107, 67;  /* RGB triplet for rgba() uses */
+    --color-orange:       #e84a2a;  /* primary accent — brand red on warm substrate */
+    --color-orange-light: #f08068;  /* hover variant — lighter */
+    --color-orange-rgb:   232, 74, 42;
     --color-slate-dark:   #1d2527;
     --color-slate-mid:    #2d3435;
 
@@ -28,9 +34,9 @@
     --secondary:          #1d2527;
     --secondary-light:    #2d3435;
     --accent:             #44797f;
-    --dark:               #13121a;
+    --dark:               #1d1411;
     --dark-2:             #34343a;
-    --gray-900:           #13121a;
+    --gray-900:           #1d1411;
     --gray-800:           #34343a;
     --gray-700:           #414147;
     --gray-600:           #6b6b72;
@@ -46,10 +52,10 @@
     --gradient-primary:   linear-gradient(135deg, var(--color-orange) 0%, var(--color-teal-dark) 100%);
     --gradient-dark:      linear-gradient(135deg, var(--color-slate-dark) 0%, var(--color-black) 100%);
 
-    --shadow-sm:          0 2px 8px rgba(19, 18, 26, 0.08);
-    --shadow-md:          2px 4px 12px rgba(19, 18, 26, 0.10);
-    --shadow-lg:          2px 4px 20px rgba(19, 18, 26, 0.14);
-    --shadow-xl:          2px 6px 30px rgba(19, 18, 26, 0.18);
+    --shadow-sm:          0 2px 8px rgba(var(--color-black-rgb), 0.08);
+    --shadow-md:          2px 4px 12px rgba(var(--color-black-rgb), 0.10);
+    --shadow-lg:          2px 4px 20px rgba(var(--color-black-rgb), 0.14);
+    --shadow-xl:          2px 6px 30px rgba(var(--color-black-rgb), 0.18);
     --shadow-glow:        0 0 20px rgba(var(--color-orange-rgb), 0.28);
 
     --radius-sm:          4px;
@@ -247,7 +253,7 @@ select {
 }
 
 .navbar.scrolled {
-    background: rgba(13, 12, 19, 0.95);
+    background: rgba(var(--color-black-rgb), 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 10px 0;
@@ -379,7 +385,7 @@ select {
     align-items: center;
     justify-content: center;
     position: relative;
-    background-color: #13121a;
+    background-color: var(--color-black);
     overflow: hidden;
 }
 
@@ -396,7 +402,7 @@ select {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(19, 18, 26, 0.55);
+    background: rgba(var(--color-black-rgb), 0.55);
     pointer-events: none;
     z-index: 1;
 }
@@ -531,7 +537,7 @@ select {
     right: 0;
     display: flex;
     align-items: stretch;
-    background: rgba(19, 18, 26, 0.75);
+    background: rgba(var(--color-black-rgb), 0.75);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-top: 1px solid rgba(var(--color-orange-rgb), 0.3);
@@ -635,7 +641,7 @@ select {
    ABOUT
    ============================================ */
 .about {
-    background: #0e0d13;
+    background: var(--color-bg-deep);
     overflow: hidden;
 }
 
@@ -890,7 +896,7 @@ select {
    SERVICES
    ============================================ */
 .services {
-    background: #13121a;
+    background: var(--color-black);
     overflow: hidden;
     clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
     padding-top: 8rem;
@@ -922,7 +928,7 @@ select {
 }
 
 .service-card {
-    background: #13121a;
+    background: var(--color-black);
     padding: 2.5rem 2rem;
     transition: background 0.3s;
     position: relative;
@@ -941,7 +947,7 @@ select {
 }
 
 .service-card:hover {
-    background: #1a1920;
+    background: var(--color-bg-raised);
 }
 
 .service-card::before {
@@ -1073,7 +1079,7 @@ select {
    PROJECTS
    ============================================ */
 .projects {
-    background: #111118;
+    background: var(--color-bg-mid);
 }
 
 .project-filters {
@@ -1155,7 +1161,7 @@ select {
 .project-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1d2527 0%, #13121a 100%);
+    background: linear-gradient(135deg, #1d2527 0%, var(--color-black) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1173,7 +1179,7 @@ select {
 .project-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(19, 18, 26, 0.97) 0%, rgba(19, 18, 26, 0.15) 65%, transparent 100%);
+    background: linear-gradient(to top, rgba(var(--color-black-rgb), 0.97) 0%, rgba(var(--color-black-rgb), 0.15) 65%, transparent 100%);
     display: flex;
     align-items: flex-end;
     padding: 28px;
@@ -1243,7 +1249,7 @@ select {
    PROCESS
    ============================================ */
 .process {
-    background: #0e0d13;
+    background: var(--color-bg-deep);
 }
 
 .process-timeline {
@@ -1287,7 +1293,7 @@ select {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--color-orange);
-    background: #0e0d13;
+    background: var(--color-bg-deep);
     grid-column: 2;
     grid-row: 1;
     justify-self: center;
@@ -1372,7 +1378,7 @@ select {
 .cta-banner {
     position: relative;
     padding: 8rem 0;
-    background: linear-gradient(135deg, var(--color-orange) 0%, #13121a 40%, #1d2527 60%, #44797f 100%);
+    background: linear-gradient(135deg, var(--color-orange) 0%, var(--color-black) 40%, #1d2527 60%, #44797f 100%);
     overflow: hidden;
     clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
     margin: -2rem 0;
@@ -1391,7 +1397,7 @@ select {
 .cta-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(19, 18, 26, 0.3) 0%, transparent 68%);
+    background: radial-gradient(ellipse at center, rgba(var(--color-black-rgb), 0.3) 0%, transparent 68%);
     pointer-events: none;
 }
 
@@ -1429,7 +1435,7 @@ select {
    TESTIMONIALS
    ============================================ */
 .testimonials {
-    background: #13121a;
+    background: var(--color-black);
 }
 
 .testimonial-swiper {
@@ -1439,7 +1445,7 @@ select {
 .testimonial-card {
     position: relative;
     padding: 2.5rem;
-    background: #1a1920;
+    background: var(--color-bg-raised);
     border: 1px solid rgba(151, 214, 223, 0.08);
     border-radius: 4px;
     height: 100%;
@@ -1533,7 +1539,7 @@ select {
    CONTACT
    ============================================ */
 .contact {
-    background: #0e0d13;
+    background: var(--color-bg-deep);
 }
 
 .contact-grid {
@@ -1702,7 +1708,7 @@ select {
    FOOTER
    ============================================ */
 .footer {
-    background: #0a090f;
+    background: var(--color-bg-darkest);
     border-top: 2px solid var(--color-orange);
 }
 
@@ -1784,7 +1790,7 @@ select {
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 24px 0;
-    background: #0d0c12;
+    background: var(--color-bg-strip);
 }
 
 .footer-bottom-content {
