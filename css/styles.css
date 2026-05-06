@@ -5,7 +5,20 @@
 
 /* ---- CSS Variables ---- */
 :root {
-    /* === Editorial Light Mode — Concrete + Steel + Corten === */
+    /* === Editorial Light Mode — Concrete + Steel + Corten ===
+       Usage policy (keep this consistent across the stylesheet):
+         • var(--color-orange)        — full intensity. Reserve for primary CTAs,
+                                        the hero focal point, dark-island accents,
+                                        and the footer→cream transition line.
+         • rgba(--color-orange-rgb, X) — decorative emphasis (borders, hover tints,
+                                        secondary accents). Prefer X = 0.5–0.75
+                                        for visible accents, 0.08–0.30 for tints.
+         • var(--color-teal-dark)     — sober structural accent (tags, dividers,
+                                        icon defaults, link defaults).
+         • Ink ladder: --color-ink (h1–h4)  >  --color-ink-soft (body)
+                       >  --color-ink-muted (captions, supporting copy)
+                       >  --color-ink-faint (placeholders, ghost dividers).
+       Do not introduce new accent values; modulate the existing tokens. */
 
     /* Page substrate (cream concrete family) — name kept for compatibility */
     --color-black:        #ece6dc;  /* warm concrete substrate */
@@ -271,7 +284,7 @@ select {
     padding-top: max(18px, env(safe-area-inset-top));
     transition: var(--transition);
     border-bottom: 2px solid transparent;
-    border-image: linear-gradient(90deg, var(--color-orange), transparent) 1;
+    border-image: linear-gradient(90deg, rgba(var(--color-orange-rgb), 0.55), transparent) 1;
 }
 
 .navbar.scrolled {
@@ -583,7 +596,7 @@ select {
     font-family: var(--font-display);
     font-size: 2.2rem;
     font-weight: 800;
-    color: var(--color-orange);
+    color: var(--color-ink);
     display: block;
     line-height: 1;
 }
@@ -633,7 +646,7 @@ select {
 
 .section-tag::before {
     content: '—';
-    color: var(--color-orange);
+    color: var(--color-teal-dark);
     font-weight: 400;
     letter-spacing: 0;
 }
@@ -811,7 +824,7 @@ select {
 }
 
 .about-feature:hover {
-    border-left-color: var(--color-orange);
+    border-left-color: rgba(var(--color-orange-rgb), 0.7);
 }
 
 .feature-icon {
@@ -829,7 +842,7 @@ select {
 }
 
 .about-feature:hover .feature-icon {
-    color: var(--color-orange);
+    color: var(--color-ink);
     background: transparent;
 }
 
@@ -1048,7 +1061,7 @@ select {
 }
 
 .service-card:hover .service-icon i {
-    color: var(--color-orange);
+    color: var(--color-ink);
 }
 
 .service-card.featured .service-icon i {
@@ -1156,7 +1169,7 @@ select {
     left: 0;
     right: 0;
     height: 2px;
-    background: var(--color-orange);
+    background: var(--color-ink);
     transform: scaleX(0);
     transition: transform 0.25s;
 }
@@ -1238,7 +1251,7 @@ select {
 }
 
 .project-card:hover .project-placeholder i {
-    color: var(--color-orange);
+    color: rgba(var(--color-orange-rgb), 0.75);
 }
 
 .project-category {
@@ -1327,14 +1340,14 @@ select {
 .step-number {
     width: 48px;
     height: 48px;
-    border: 2px solid var(--color-orange);
+    border: 1.5px solid rgba(var(--color-ink-rgb), 0.35);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--color-orange);
+    color: var(--color-ink);
     background: var(--color-bg-deep);
     grid-column: 2;
     grid-row: 1;
@@ -1528,7 +1541,7 @@ select {
 }
 
 .testimonial-stars i {
-    color: var(--color-orange);
+    color: rgba(var(--color-orange-rgb), 0.7);
     font-size: 0.8rem;
     margin-right: 2px;
 }
@@ -1684,9 +1697,9 @@ select {
 }
 
 .social-links a:hover {
-    border-color: var(--color-orange);
-    color: var(--color-orange);
-    background: rgba(var(--color-orange-rgb), 0.08);
+    border-color: var(--color-teal-dark);
+    color: var(--color-teal-dark);
+    background: rgba(68, 121, 127, 0.08);
 }
 
 .contact-form {
