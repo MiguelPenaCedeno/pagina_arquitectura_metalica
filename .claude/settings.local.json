@@ -12,7 +12,11 @@
       "Bash(python:*)",
       "Bash(python3 -c \"from PIL import Image; print\\(''ok''\\)\")",
       "Bash(pip3.12 install:*)",
-      "Bash(\"C:\\\\Users\\\\migue\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\\\python.exe\" -c \"from PIL import Image; print\\(''ok''\\)\")"
+      "Bash(\"C:\\\\Users\\\\migue\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\\\python.exe\" -c \"from PIL import Image; print\\(''ok''\\)\")",
+      "Bash(ls -la /c/Users/migue/Desktop/pagina_arquitectura_metalica/*.*)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
