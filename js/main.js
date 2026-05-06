@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
-            color: 0x97d6df,
-            backgroundColor: 0x13121a,
+            color: 0x1a1208,            // dark ink — net + particles
+            backgroundColor: 0xece6dc,  // cream — matches page substrate
             points: isMobile ? 6.0 : 10.0,
             maxDistance: isMobile ? 26.0 : 22.0,
             spacing: isMobile ? 34.0 : 18.0,

@@ -202,14 +202,14 @@ select {
    UTILITIES
    ============================================ */
 .text-gradient {
-    background: linear-gradient(90deg, var(--color-orange-light) 0%, var(--color-teal-light) 100%);
+    background: linear-gradient(90deg, var(--color-orange) 0%, var(--color-teal-dark) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .hero h1 .text-gradient {
-    filter: drop-shadow(0 0 30px rgba(240, 128, 104, 0.3));
+    filter: drop-shadow(0 1px 0 rgba(var(--color-black-rgb), 0.4));
 }
 
 /* ============================================
@@ -439,7 +439,7 @@ select {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(var(--color-black-rgb), 0.55);
+    background: rgba(var(--color-black-rgb), 0.18);
     pointer-events: none;
     z-index: 1;
 }
@@ -460,16 +460,18 @@ select {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(var(--color-orange-rgb), 0.08);
-    border: 1px solid rgba(var(--color-orange-rgb), 0.22);
+    background: rgba(var(--color-black-rgb), 0.65);
+    border: 1px solid rgba(var(--color-orange-rgb), 0.35);
     padding: 7px 18px;
     border-radius: var(--radius-xl);
     font-size: 11px;
     font-weight: 700;
-    color: var(--color-teal-dark);
+    color: var(--color-ink);
     margin-bottom: 36px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .hero h1 {
@@ -484,7 +486,7 @@ select {
 
 .hero-subtitle {
     font-size: clamp(16px, 1.8vw, 19px);
-    color: var(--color-ink-muted);
+    color: var(--color-ink-soft);
     max-width: 540px;
     margin: 0 0 44px;
     line-height: 1.75;
@@ -496,6 +498,21 @@ select {
     gap: 12px;
     justify-content: flex-start;
     flex-wrap: wrap;
+}
+
+/* Hero scope: bump button + text contrast against the animated mesh */
+.hero .btn-outline {
+    color: var(--color-ink);
+    border-color: var(--color-ink);
+    background: rgba(var(--color-black-rgb), 0.45);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.hero .btn-outline:hover {
+    color: var(--color-orange);
+    border-color: var(--color-orange);
+    background: rgba(var(--color-black-rgb), 0.65);
 }
 
 .scroll-indicator {
