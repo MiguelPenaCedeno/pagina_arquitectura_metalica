@@ -99,6 +99,10 @@ html {
     scroll-padding-top: 80px;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
@@ -107,7 +111,11 @@ body {
     line-height: 1.7;
     color: var(--gray-300);
     background: var(--color-black);
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
+    overflow-x: clip;
+    position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -364,7 +372,8 @@ select {
    ============================================ */
 .hero {
     min-height: 100vh;
-    min-height: -webkit-fill-available;
+    min-height: 100svh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
