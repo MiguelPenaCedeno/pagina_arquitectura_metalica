@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---- Vanta NET — Animated Hero Background ----
     if (typeof VANTA !== 'undefined') {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
         vantaEffect = VANTA.NET({
             el: '.hero',
             mouseControls: true,
@@ -44,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
             gyroControls: false,
             color: 0x97d6df,
             backgroundColor: 0x13121a,
-            points: 10.0,
-            maxDistance: 22.0,
-            spacing: 18.0,
+            points: isMobile ? 6.0 : 10.0,
+            maxDistance: isMobile ? 26.0 : 22.0,
+            spacing: isMobile ? 34.0 : 18.0,
             showDots: true
         });
     }
