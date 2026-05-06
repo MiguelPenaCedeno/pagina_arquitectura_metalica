@@ -2238,20 +2238,48 @@ select {
 }
 
 /* ============================================
-   RESPONSIVE — 480px (Small Mobile)
+   RESPONSIVE — 480px (Small Mobile, iPhone SE-class)
    ============================================ */
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
     }
 
+    /* Let the hero grow with content instead of being locked to 100vh —
+       on iPhone SE the stats bar overlapping absolute-positioned hero-content
+       was pushing the buttons below the fold. */
+    .hero {
+        min-height: auto;
+    }
+
     .hero-content {
-        padding: 108px 0 200px;
+        padding: 96px 0 32px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.25rem, 9vw, 3rem);
+        line-height: 1.08;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 28px;
     }
 
     .hero-badge {
         font-size: 10px;
         padding: 6px 14px;
+        margin-bottom: 24px;
+    }
+
+    /* Stack hero CTAs vertically with breathing room.
+       Each button takes the full column; gap keeps tap targets clearly separated. */
+    .hero-buttons,
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        width: 100%;
     }
 
     .hero-buttons .btn,
@@ -2259,8 +2287,11 @@ select {
         width: 100%;
     }
 
-    .logo-img {
-        height: 36px;
+    /* Stats bar is no longer absolute on small screens —
+       it sits naturally below the buttons. */
+    .hero-stats-bar {
+        position: relative;
+        margin-top: 16px;
     }
 
     .hero-stats-bar .stat-item {
