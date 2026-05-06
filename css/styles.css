@@ -15,8 +15,9 @@
     --color-teal-mid:     #b7e2e8;
     --color-teal-dark:    #44797f;
     --color-teal-muted:   #7ba0a6;
-    --color-orange:       #e84a2a;  /* primary accent — brand orange */
-    --color-orange-light: #f08068;  /* hover variant — lighter orange */
+    --color-orange:       #b56b43;  /* primary accent — Corten rust (weathering steel) */
+    --color-orange-light: #cc8a65;  /* hover variant — light patina */
+    --color-orange-rgb:   181, 107, 67;  /* RGB triplet for rgba() uses */
     --color-slate-dark:   #1d2527;
     --color-slate-mid:    #2d3435;
 
@@ -40,16 +41,16 @@
     --gray-100:           #f4f4f4;
     --white:              #ffffff;
 
-    --gradient-brand:     linear-gradient(135deg, #e84a2a 0%, #13121a 50%, #44797f 100%);
-    --gradient-accent:    linear-gradient(135deg, #f08068 0%, #97d6df 100%);
-    --gradient-primary:   linear-gradient(135deg, #e84a2a 0%, #44797f 100%);
-    --gradient-dark:      linear-gradient(135deg, #1d2527 0%, #13121a 100%);
+    --gradient-brand:     linear-gradient(135deg, var(--color-orange) 0%, var(--color-black) 50%, var(--color-teal-dark) 100%);
+    --gradient-accent:    linear-gradient(135deg, var(--color-orange-light) 0%, var(--color-teal-light) 100%);
+    --gradient-primary:   linear-gradient(135deg, var(--color-orange) 0%, var(--color-teal-dark) 100%);
+    --gradient-dark:      linear-gradient(135deg, var(--color-slate-dark) 0%, var(--color-black) 100%);
 
     --shadow-sm:          0 2px 8px rgba(19, 18, 26, 0.08);
     --shadow-md:          2px 4px 12px rgba(19, 18, 26, 0.10);
     --shadow-lg:          2px 4px 20px rgba(19, 18, 26, 0.14);
     --shadow-xl:          2px 6px 30px rgba(19, 18, 26, 0.18);
-    --shadow-glow:        0 0 20px rgba(232, 74, 42, 0.28);
+    --shadow-glow:        0 0 20px rgba(var(--color-orange-rgb), 0.28);
 
     --radius-sm:          4px;
     --radius-md:          4px;
@@ -160,7 +161,7 @@ select {
    UTILITIES
    ============================================ */
 .text-gradient {
-    background: linear-gradient(90deg, #f08068 0%, #97d6df 100%);
+    background: linear-gradient(90deg, var(--color-orange-light) 0%, #97d6df 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -217,7 +218,7 @@ select {
 
 .loader-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #e84a2a, #97d6df);
+    background: linear-gradient(90deg, var(--color-orange), #97d6df);
     border-radius: 2px;
     animation: loaderProgress 1.6s ease-in-out forwards;
     animation-delay: 0.25s;
@@ -242,7 +243,7 @@ select {
     padding-top: max(18px, env(safe-area-inset-top));
     transition: var(--transition);
     border-bottom: 2px solid transparent;
-    border-image: linear-gradient(90deg, #e84a2a, transparent) 1;
+    border-image: linear-gradient(90deg, var(--color-orange), transparent) 1;
 }
 
 .navbar.scrolled {
@@ -308,7 +309,7 @@ select {
     left: 14px;
     right: 14px;
     height: 2px;
-    background: linear-gradient(90deg, #e84a2a, #97d6df);
+    background: linear-gradient(90deg, var(--color-orange), #97d6df);
     transform: scaleX(0);
     transform-origin: left;
     transition: var(--transition);
@@ -320,7 +321,7 @@ select {
 }
 
 .btn-nav {
-    background: linear-gradient(135deg, #e84a2a, #44797f) !important;
+    background: linear-gradient(135deg, var(--color-orange), #44797f) !important;
     color: var(--white) !important;
     border-radius: var(--radius-sm) !important;
     padding: 10px 18px !important;
@@ -333,7 +334,7 @@ select {
 .btn-nav::after { display: none !important; }
 
 .btn-nav:hover {
-    background: linear-gradient(135deg, #f08068, #97d6df) !important;
+    background: linear-gradient(135deg, var(--color-orange-light), #97d6df) !important;
     box-shadow: var(--shadow-glow) !important;
     transform: translateY(-1px);
 }
@@ -416,8 +417,8 @@ select {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(232, 74, 42, 0.08);
-    border: 1px solid rgba(232, 74, 42, 0.22);
+    background: rgba(var(--color-orange-rgb), 0.08);
+    border: 1px solid rgba(var(--color-orange-rgb), 0.22);
     padding: 7px 18px;
     border-radius: var(--radius-xl);
     font-size: 11px;
@@ -487,14 +488,14 @@ select {
 }
 
 .btn-primary {
-    background: #e84a2a;
+    background: var(--color-orange);
     color: var(--white);
-    border-color: #e84a2a;
+    border-color: var(--color-orange);
 }
 
 .btn-primary:hover {
     background: transparent;
-    color: #e84a2a;
+    color: var(--color-orange);
     transform: translateY(-2px);
 }
 
@@ -533,7 +534,7 @@ select {
     background: rgba(19, 18, 26, 0.75);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(232, 74, 42, 0.3);
+    border-top: 1px solid rgba(var(--color-orange-rgb), 0.3);
     z-index: 3;
 }
 
@@ -553,7 +554,7 @@ select {
     font-family: var(--font-display);
     font-size: 2.2rem;
     font-weight: 800;
-    color: #e84a2a;
+    color: var(--color-orange);
     display: block;
     line-height: 1;
 }
@@ -562,7 +563,7 @@ select {
     font-family: var(--font-display);
     font-size: 1.4rem;
     font-weight: 700;
-    color: #e84a2a;
+    color: var(--color-orange);
     display: inline;
 }
 
@@ -603,7 +604,7 @@ select {
 
 .section-tag::before {
     content: '—';
-    color: #e84a2a;
+    color: var(--color-orange);
     font-weight: 400;
     letter-spacing: 0;
 }
@@ -694,7 +695,7 @@ select {
     left: 0;
     width: 80px;
     height: 4px;
-    background: #e84a2a;
+    background: var(--color-orange);
 }
 
 .about-img-placeholder i {
@@ -717,7 +718,7 @@ select {
     right: -1.5rem;
     width: 110px;
     height: 110px;
-    background: #e84a2a;
+    background: var(--color-orange);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -776,12 +777,12 @@ select {
     gap: 1rem;
     align-items: flex-start;
     padding: 1rem 0 1rem 1.25rem;
-    border-left: 2px solid rgba(232, 74, 42, 0.35);
+    border-left: 2px solid rgba(var(--color-orange-rgb), 0.35);
     transition: border-color 0.3s;
 }
 
 .about-feature:hover {
-    border-left-color: #e84a2a;
+    border-left-color: var(--color-orange);
 }
 
 .feature-icon {
@@ -851,7 +852,7 @@ select {
     height: 3px;
 }
 
-.mv-card:nth-child(1)::before { background: #e84a2a; }
+.mv-card:nth-child(1)::before { background: var(--color-orange); }
 .mv-card:nth-child(2)::before { background: #44797f; }
 .mv-card:nth-child(3)::before { background: #97d6df; }
 
@@ -866,7 +867,7 @@ select {
     border-radius: 0;
 }
 
-.mv-card:nth-child(1) .mv-icon { color: #e84a2a; }
+.mv-card:nth-child(1) .mv-icon { color: var(--color-orange); }
 .mv-card:nth-child(2) .mv-icon { color: #44797f; }
 .mv-card:nth-child(3) .mv-icon { color: #97d6df; }
 
@@ -965,13 +966,13 @@ select {
 }
 
 .service-card.featured::before {
-    background: #e84a2a;
+    background: var(--color-orange);
     transform: scaleX(1);
 }
 
 .service-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #e84a2a, #44797f);
+    background: linear-gradient(135deg, var(--color-orange), #44797f);
     color: var(--white);
     font-size: 10px;
     font-weight: 700;
@@ -1003,11 +1004,11 @@ select {
 }
 
 .service-card.featured .service-icon i {
-    color: #e84a2a;
+    color: var(--color-orange);
 }
 
 .service-card.featured:hover .service-icon i {
-    color: #f08068;
+    color: var(--color-orange-light);
 }
 
 .service-card h3 {
@@ -1064,7 +1065,7 @@ select {
 }
 
 .service-link:hover {
-    color: #e84a2a;
+    color: var(--color-orange);
     gap: 14px;
 }
 
@@ -1107,7 +1108,7 @@ select {
     left: 0;
     right: 0;
     height: 2px;
-    background: #e84a2a;
+    background: var(--color-orange);
     transform: scaleX(0);
     transition: transform 0.25s;
 }
@@ -1194,7 +1195,7 @@ select {
 
 .project-category {
     display: inline-block;
-    background: linear-gradient(135deg, #e84a2a, #44797f);
+    background: linear-gradient(135deg, var(--color-orange), #44797f);
     color: var(--white);
     font-size: 10px;
     font-weight: 700;
@@ -1223,7 +1224,7 @@ select {
     right: 16px;
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #e84a2a, #44797f);
+    background: linear-gradient(135deg, var(--color-orange), #44797f);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -1278,14 +1279,14 @@ select {
 .step-number {
     width: 48px;
     height: 48px;
-    border: 2px solid #e84a2a;
+    border: 2px solid var(--color-orange);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #e84a2a;
+    color: var(--color-orange);
     background: #0e0d13;
     grid-column: 2;
     grid-row: 1;
@@ -1371,7 +1372,7 @@ select {
 .cta-banner {
     position: relative;
     padding: 8rem 0;
-    background: linear-gradient(135deg, #e84a2a 0%, #13121a 40%, #1d2527 60%, #44797f 100%);
+    background: linear-gradient(135deg, var(--color-orange) 0%, #13121a 40%, #1d2527 60%, #44797f 100%);
     overflow: hidden;
     clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
     margin: -2rem 0;
@@ -1453,13 +1454,13 @@ select {
     left: 1.5rem;
     font-size: 8rem;
     line-height: 1;
-    color: rgba(232, 74, 42, 0.1);
+    color: rgba(var(--color-orange-rgb), 0.1);
     font-family: Georgia, serif;
     pointer-events: none;
 }
 
 .testimonial-card:hover {
-    border-color: rgba(232, 74, 42, 0.2);
+    border-color: rgba(var(--color-orange-rgb), 0.2);
 }
 
 .testimonial-stars {
@@ -1467,7 +1468,7 @@ select {
 }
 
 .testimonial-stars i {
-    color: #e84a2a;
+    color: var(--color-orange);
     font-size: 0.8rem;
     margin-right: 2px;
 }
@@ -1492,8 +1493,8 @@ select {
     width: 48px;
     height: 48px;
     min-width: 48px;
-    background: linear-gradient(135deg, rgba(232, 74, 42, 0.1), rgba(68, 121, 127, 0.1));
-    border: 1px solid rgba(232, 74, 42, 0.28);
+    background: linear-gradient(135deg, rgba(var(--color-orange-rgb), 0.1), rgba(68, 121, 127, 0.1));
+    border: 1px solid rgba(var(--color-orange-rgb), 0.28);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1522,7 +1523,7 @@ select {
 }
 
 .swiper-pagination-bullet-active {
-    background: linear-gradient(90deg, #e84a2a, #97d6df);
+    background: linear-gradient(90deg, var(--color-orange), #97d6df);
     width: 24px;
     border-radius: 4px;
     transition: width var(--transition);
@@ -1623,9 +1624,9 @@ select {
 }
 
 .social-links a:hover {
-    border-color: #e84a2a;
-    color: #e84a2a;
-    background: rgba(232, 74, 42, 0.08);
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+    background: rgba(var(--color-orange-rgb), 0.08);
 }
 
 .contact-form {
@@ -1702,7 +1703,7 @@ select {
    ============================================ */
 .footer {
     background: #0a090f;
-    border-top: 2px solid #e84a2a;
+    border-top: 2px solid var(--color-orange);
 }
 
 .footer-top {
@@ -1839,7 +1840,7 @@ select {
     right: max(96px, calc(env(safe-area-inset-right) + 84px));
     width: 44px;
     height: 44px;
-    background: linear-gradient(135deg, #e84a2a, #44797f);
+    background: linear-gradient(135deg, var(--color-orange), #44797f);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -1862,7 +1863,7 @@ select {
 }
 
 .back-to-top:hover {
-    background: linear-gradient(135deg, #f08068, #97d6df);
+    background: linear-gradient(135deg, var(--color-orange-light), #97d6df);
     transform: translateY(-2px);
 }
 
@@ -2405,7 +2406,7 @@ button:focus-visible,
    SELECTION & SCROLLBAR
    ============================================ */
 ::selection {
-    background: rgba(232, 74, 42, 0.25);
+    background: rgba(var(--color-orange-rgb), 0.25);
     color: var(--white);
 }
 
@@ -2418,12 +2419,12 @@ button:focus-visible,
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #e84a2a, #44797f);
+    background: linear-gradient(180deg, var(--color-orange), #44797f);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #f08068, #97d6df);
+    background: linear-gradient(180deg, var(--color-orange-light), #97d6df);
 }
 
 /* ============================================

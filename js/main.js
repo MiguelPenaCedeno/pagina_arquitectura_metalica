@@ -391,6 +391,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return;
 
         const particleCount = 30;
+        const rootStyles = getComputedStyle(document.documentElement);
+        const orangeRgb = rootStyles.getPropertyValue('--color-orange-rgb').trim() || '181, 107, 67';
+        const tealRgb = '151, 214, 223';
 
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
@@ -398,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 position: absolute;
                 width: ${Math.random() * 3 + 1}px;
                 height: ${Math.random() * 3 + 1}px;
-                background: ${Math.random() > 0.5 ? `rgba(232, 74, 42, ${Math.random() * 0.2 + 0.05})` : `rgba(151, 214, 223, ${Math.random() * 0.2 + 0.05})`};
+                background: ${Math.random() > 0.5 ? `rgba(${orangeRgb}, ${Math.random() * 0.2 + 0.05})` : `rgba(${tealRgb}, ${Math.random() * 0.2 + 0.05})`};
                 border-radius: 50%;
                 top: ${Math.random() * 100}%;
                 left: ${Math.random() * 100}%;
