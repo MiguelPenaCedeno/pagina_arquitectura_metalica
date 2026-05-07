@@ -228,26 +228,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ---- A11y: mark decorative FontAwesome icons hidden from assistive tech ----
+    document.querySelectorAll('i[class*="fa-"]').forEach(icon => {
+        if (!icon.hasAttribute('aria-label') && !icon.hasAttribute('aria-hidden')) {
+            icon.setAttribute('aria-hidden', 'true');
+        }
+    });
+
     // ---- Mobile Menu ----
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
 
+    const setMenuOpen = (open) => {
+        hamburger.classList.toggle('active', open);
+        navMenu.classList.toggle('active', open);
+        hamburger.setAttribute('aria-expanded', String(open));
+        hamburger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    };
+
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        setMenuOpen(!hamburger.classList.contains('active'));
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
+            setMenuOpen(false);
     });
 
     document.addEventListener('click', (e) => {
         if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            setMenuOpen(false);
         }
     });
 
@@ -317,8 +327,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
+            filterBtns.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
             btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
 
             const filter = btn.dataset.filter;
 
