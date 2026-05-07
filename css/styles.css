@@ -2604,3 +2604,77 @@ button:focus-visible,
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ============================================
+   CLIENT LOGO MARQUEE (between Nosotros & Servicios)
+   ============================================ */
+.logo-marquee {
+    background: var(--color-bg-deep);
+    padding: 56px 0;
+    border-top: 1px solid rgba(var(--color-ink-rgb), 0.06);
+    border-bottom: 1px solid rgba(var(--color-ink-rgb), 0.06);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-marquee__viewport {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+.logo-marquee__track {
+    display: flex;
+    align-items: center;
+    gap: 72px;
+    width: max-content;
+    animation: logoMarqueeScroll 40s linear infinite;
+    will-change: transform;
+}
+
+.logo-marquee:hover .logo-marquee__track,
+.logo-marquee:focus-within .logo-marquee__track {
+    animation-play-state: paused;
+}
+
+.logo-marquee__item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+}
+
+.logo-marquee__item img {
+    max-height: 100%;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.55;
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo-marquee__item:hover img {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+@keyframes logoMarqueeScroll {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (max-width: 768px) {
+    .logo-marquee { padding: 40px 0; }
+    .logo-marquee__track { gap: 48px; animation-duration: 30s; }
+    .logo-marquee__item { height: 48px; }
+    .logo-marquee__item img { max-width: 130px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-marquee__track { animation: none; }
+}
