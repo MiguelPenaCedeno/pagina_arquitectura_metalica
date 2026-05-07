@@ -253,6 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             setMenuOpen(false);
+        });
     });
 
     document.addEventListener('click', (e) => {
